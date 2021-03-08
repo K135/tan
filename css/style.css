@@ -26,6 +26,7 @@ body {
   background: url(./../img/lightt.png);
   overflow-x: hidden;
   background-attachment: fixed;
+  background-repeat: repeat;
 }
 
 .slider-section {
@@ -254,21 +255,33 @@ body {
   }
 }
 
+
+@media only screen and (max-width: 1200px) {
+  
+  
+
+}
+
 @media only screen and (max-width: 1076px) {
   .hero-section .pend img {
     position: absolute;
   }
 }
 
-@media only screen and (max-width: 992px) {
+
+
+@media only screen and (max-width: 1200px) {
   .inspiration-bg {
     margin-top: 400px;
     height: 400px;
     background-attachment: scroll;
+   background-size: 120%;
   }
+
   .inspiration-card {
     margin-top: -300px;
   }
+  
   #mb-cont {
     text-align: justify;
   }
