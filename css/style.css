@@ -1,0 +1,454 @@
+.centerSet {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.bottomSet {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+/* .videoFirst{
+  background: url('../../images/store.jpg');
+} */
+
+/* -------------------------------- SECTIONS------------------------------- */
+body {
+  font-family: serif;
+  font-size: 18px;
+  overflow-x: hidden;
+}
+.hero-section {
+  position: relative;
+  background: url(./../img/lightt.png);
+  overflow-x: hidden;
+  background-attachment: fixed;
+}
+
+.slider-section {
+  position: relative;
+  background: url(./../img/slider-bg.png);
+  background-repeat: no-repeat;
+  background-position: left;
+  background-size: cover;
+}
+
+/* -------------------------------- SECTIONS------------------------------- */
+
+.videoYT {
+  background-color: black;
+}
+/* -------------------------------- INSPIRATION background-------------------------------*/
+.inspiration-bg {
+  scroll-behavior: smooth;
+  position: relative;
+  background-image: url(../img/counter-resized.jpg);
+  height: 450px;
+  margin-top: 250px;
+  transform: translateZ(-5px);
+  background-attachment: fixed;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+/* -------------------------------- INSPIRATION background-------------------------------*/
+
+/* -------------------------------- INSPIRATION CARDS-------------------------------*/
+.inspiration-card {
+  /* word-spacing:1px; */
+  transform: translateY(30px) scale(0.6);
+
+  transition-duration: 0.4s;
+  background: white;
+  padding-left: 15px;
+  padding-right: 15px;
+  padding-bottom: 10px;
+  padding-top: 10px;
+  opacity: 0;
+  margin-left: auto;
+  margin-right: auto;
+  height: 470px;
+  width: 324px;
+  border-radius: 35px;
+  margin-top: -30px;
+  box-shadow: -3px 4px 28px -7px rgba(0, 0, 0, 0.54);
+  -webkit-box-shadow: -3px 4px 28px -7px rgba(0, 0, 0, 0.54);
+  -moz-box-shadow: -3px 4px 28px -7px rgba(0, 0, 0, 0.54);
+}
+
+.inspiration-card h4 {
+  font-size: 24px;
+}
+.inspiration-card img {
+  padding-left: 10px;
+  padding-right: 10px;
+  max-width: 220px;
+  margin-bottom: 10px;
+}
+.inspiration-card p {
+  font-family: serif;
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+/* -------------------------------- INSPIRATION CARDS-------------------------------*/
+
+.gradient-overlay-div-l {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0) 54%,
+    rgba(244, 223, 149, 0.7777485994397759) 91%
+  );
+}
+.gradient-overlay-div-r {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  background: linear-gradient(
+    90deg,
+    rgba(244, 223, 149, 0.7777485994397759) 8%,
+    rgba(255, 255, 255, 0) 54%
+  );
+}
+
+.pendulum {
+  animation: pendulum_movement 3s ease-in-out infinite alternate;
+  transform-origin: top;
+}
+.pendulumReverse {
+  animation: pendulum_movement 3s ease-in-out infinite alternate-reverse;
+  transform-origin: top;
+}
+
+@keyframes pendulum_movement {
+  from {
+    transform: rotate(2deg);
+  }
+  to {
+    transform: rotate(-2deg);
+  }
+}
+
+@media (max-width: 768px) {
+  .slider-section .carousel-inner .carousel-item > div {
+    display: none;
+  }
+  .slider-section .carousel-inner .carousel-item > div:first-child {
+    display: block;
+  }
+}
+
+.slider-section .carousel-inner .carousel-item.active,
+.slider-section .carousel-inner .carousel-item-next,
+.slider-section .carousel-inner .carousel-item-prev {
+  display: inline-flex;
+}
+
+/* --------------------------------------Youtube VIDEO IFRAME------------------------*/
+.videoWrapper {
+  transform: scale(0.6);
+
+  transition-duration: 0.4s;
+  border-top: 70px;
+  opacity: 0;
+  position: relative;
+  padding-bottom: 56.25%; /* 16:9 */
+
+  height: 0;
+}
+.videoWrapper iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 20px;
+}
+/* --------------------------------------Youtube VIDEO IFRAME------------------------*/
+
+/* --------------------------------------FLOAT OBJECT--------------------------------*/
+.floatOBJECT {
+  animation-name: floatOBJECT;
+  animation-duration: 4s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+  margin-left: 30px;
+  margin-top: 5px;
+}
+
+@keyframes floatOBJECT {
+  from {
+    transform: translate(0, 0px);
+  }
+  65% {
+    transform: translate(0, 12px);
+  }
+  to {
+    transform: translate(0, -0px);
+  }
+}
+
+.floatOBJECTREV {
+  animation-name: floatOBJECTREV;
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+  margin-left: 30px;
+  margin-top: 5px;
+}
+
+@keyframes floatOBJECTREV {
+  from {
+    transform: translate(0, 15px);
+  }
+  65% {
+    transform: translate(0, 0px);
+  }
+  to {
+    transform: translate(0, -15px);
+  }
+}
+
+.hero-section .pend img {
+  position: fixed;
+}
+
+/* --------------------------------------FLOAT OBJECT-------------------------------*/
+
+@media only screen and (max-width: 991px) {
+  .slider-section {
+    background-image: url(../img/slider-small.png);
+    background-position: center;
+    background-size: cover;
+
+  }
+  .vidFirst {
+    transform: translateY(100px);
+  }
+  #mb-cont {
+    transform: translateY(50px);
+  }
+  .firstlogo {
+    padding-top: 100px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .hero-section .pend img {
+    position: absolute;
+  }
+}
+@media only screen and (min-width: 150px) {
+  .slider-section {
+    height: auto;
+  }
+}
+
+@media only screen and (max-width: 1076px) {
+  .hero-section .pend img {
+    position: absolute;
+  }
+}
+
+@media only screen and (max-width: 992px) {
+  .inspiration-bg {
+    margin-top: 400px;
+    height: 400px;
+    background-attachment: scroll;
+  }
+  .inspiration-card {
+    margin-top: -300px;
+  }
+  #mb-cont {
+    text-align: justify;
+  }
+
+  .first-ins {
+    margin-top: 300px;
+  }
+  .videoYT2 {
+    margin-bottom: 200px;
+    background-color: black;
+  }
+
+  .footer-div img.rights,
+  .footer-div img.lefts {
+    display: none;
+  }
+
+  .gradient-overlay-div-l {
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    background: linear-gradient(
+      0deg,
+      rgba(255, 255, 255, 0) 54%,
+      rgba(244, 223, 149, 0.7777485994397759) 91%
+    );
+  }
+  .gradient-overlay-div-r {
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    background: linear-gradient(
+      180deg,
+      rgba(244, 223, 149, 0.7777485994397759) 8%,
+      rgba(255, 255, 255, 0) 54%
+    );
+  }
+}
+
+#carousel123 {
+  width: 100%;
+  height: auto;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  padding-top: 15;
+}
+
+@media (max-width: 1440px) {
+  #carousel123 {
+    width: 100%;
+  }
+}
+
+#slides {
+  overflow: hidden;
+  /* fix ie overflow issue */
+  position: relative;
+  width: 90%;
+  height: auto;
+}
+
+/* remove the list styles, width : item width * total items */
+#slides ul {
+  transition-duration: 1s;
+  position: absolute;
+  top: 0;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+/* width of the item, in this case I put 250x250x gif */
+#slides li {
+  height: auto;
+  float: left;
+  width: 300px;
+}
+
+#slides li img {
+  width: auto;
+  margin-left: auto;
+  margin-right: auto;
+  height: 150px;
+}
+
+.img-container img {
+  cursor: pointer;
+}
+
+#slides li p {
+  text-align: center;
+  font-family: sans-serif;
+  font-size: 20px;
+}
+
+/* Styling for prev and next buttons */
+#buttons {
+  padding: 0 0 5px 0;
+  float: right;
+}
+
+#buttons a {
+  display: block;
+  width: 31px;
+  height: 32px;
+  float: left;
+  outline: 0;
+}
+
+a#prev,
+a#next {
+  font-size: 35px;
+  color: #ccc;
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  padding: 20px;
+  transform: scale(1.5, 4);
+  transition-duration: 0.4s;
+  height: 170px;
+}
+
+.clear {
+  clear: both;
+}
+
+@media (max-width: 1440px) {
+  #carousel123 {
+    width: 100%;
+  }
+}
+
+@media (max-width: 440px) {
+  #slides li {
+    width: 100px;
+  }
+
+  .img-container {
+    height: 100px;
+  }
+
+  a#prev,
+  a#next {
+    display: none;
+  }
+}
+
+
+
+
+.swiper-container {
+  width: 100%;
+  height: 100%;
+}
+
+.swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  background: transparent;
+
+  /* Center slide text vertically */
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+}
+
+

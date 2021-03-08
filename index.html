@@ -1,0 +1,1295 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myapp">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title></title>
+    <link href="https://fonts.googleapis.com/css?family=Playfair+Display|Raleway:500" rel="stylesheet">
+	<link rel="stylesheet" href="./css/swiper-bundle.min.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/carousel-slick.css">
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/footer.css">
+	<link rel="stylesheet" href="css/style.css">
+
+</head>
+<body>
+    <div id="header">
+<header >
+
+<div class="container-fluid no-padding cookies-msg alert animated slideInDown">
+    <div class="container">
+        <div class="row">
+            <p class="cookie-text col-md-11 col-xs-11">We use cookies to optimise your visit. By continuing to browse our site you are accepting our cookie policy.</p>
+            <a href="javascript:;" class="close-icon col-md-1 col-xs-1 cookies-close-icon" onclick="cookieInfoHide()"></a>
+        </div>
+    </div>
+</div>
+       <div class="container-fluid brand-selector-container collapse collapsed" id="brandSelector" >
+        <div class="brand-selector-title text-center">SELECT A BRAND SITE</div>
+        <ul class="row col-xs-12 col-md-12 text-center brand-logos no-padding">
+           			
+		  <!--<li class="col-xs-6 col-sm-3 no-padding">
+				<a href="[Component name="env_lib/brand selector/tanishq" format="url"]">
+					<img defer-image-load image-src="[Component name="tanishq_design_lib/img/logo/tanishq-logo" format="url"]">
+				</a>
+			</li>-->
+			<li class="col-xs-6 col-sm-3 no-padding">
+				  <a href="[Component name="env_lib/brand selector/titan" format="url"]">
+					<img defer-image-load image-src="[Component name="tanishq_design_lib/img/logo/titan-logo" format="url"]">
+				</a>
+			</li>
+			<li class="col-xs-6 col-sm-3 no-padding">
+				  <a href="[Component name="env_lib/brand selector/fastrack" format="url"]">
+					<img defer-image-load image-src="[Component name="tanishq_design_lib/img/logo/fastrack-logo" format="url"]">
+				</a>
+			</li>
+			<li class="col-xs-6 col-sm-3 no-padding">
+				  <a href="[Component name="env_lib/brand selector/helios" format="url"]">
+					<img defer-image-load image-src="[Component name="tanishq_design_lib/img/logo/helios-logo" format="url"]">
+				</a>
+			</li>
+			<li class="col-xs-6 col-sm-3 no-padding">
+				  <a href="[Component name="env_lib/brand selector/xylys" format="url"]">
+					<img defer-image-load image-src="[Component name="tanishq_design_lib/img/logo/xylys-logo" format="url"]">
+				</a>
+			</li>
+			<li class="col-xs-6 col-sm-3 no-padding">
+				  <a href="[Component name="env_lib/brand selector/skinn" format="url"]">
+					<img defer-image-load image-src="[Component name="tanishq_design_lib/img/logo/skinn-logo" format="url"]">
+				</a>
+			</li>
+			<li class="col-xs-6 col-sm-3 no-padding">
+				  <a href="[Component name="env_lib/brand selector/sonata" format="url"]">
+					<img defer-image-load image-src="[Component name="tanishq_design_lib/img/logo/sonata-logo" format="url"]">
+				</a>
+			</li>
+			<li class="col-xs-6 col-sm-3 no-padding">
+				  <a href="[Component name="env_lib/brand selector/mia" format="url"]">
+					<img defer-image-load image-src="[Component name="tanishq_design_lib/img/logo/mia-logo" format="url"]">
+				</a>
+			</li>
+        </ul>
+      <!--<div class="brandselect-backdrop"></div>-->
+    </div>
+    <div class="container-fluid currency-selector-container collapse collapsed hidden-xs hidden-sm" id="currencySelector">
+        <div class="currency-selector-title text-center">SELECT A CURRENCY</div>
+        <ul class="row col-xs-12 col-md-12 currency currency-logos no-padding">
+            <li ng-class="{'currencyEnable':crncy.additionalValue[0].value === cookieCurrencyvalue, 'currencyEnableFirst': $first && cookieCurrencyvalue === undefined}" class="col-xs-6 col-sm-2 no-padding">
+                <button>{{crncy.additionalValue[0].value}}<span ng-if="!(crncy.additionalValue[0].value == 'INR')">{{crncy.currencySymbol}}</span>
+                 <span ng-if="crncy.additionalValue[0].value == 'INR'"><i class="fa fa-inr"></i></span></button>
+            </li>
+        </ul>
+    </div>
+<div class="category-background"></div>
+        <nav class="navbar navbar-default">
+            <hr class="col-xs-12 no-padding divider">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="navbar-header scroll-menu col-xs-12 col-md-12 no-padding">
+                        <div class="col-md-5 col-xs-3 no-padding selector-container">
+							<a class="scroll-menu navbar-brand col-md-3 col-xs-12 brands-selector"  data-toggle="collapse" data-target="#brandSelector">
+								BRANDS<span class="brand-arrow"></span>
+							</a>
+							<a class="scroll-menu navbar-brand col-md-6 currency-selector hidden-xs hidden-sm" data-toggle="collapse" data-target="#currencySelector" href="">
+								CURRENCY SELECTOR <span class="brand-arrow"></span>
+							</a>
+						</div>
+						<div class="col-xs-6">
+							<a href="" class="scroll-menu navbar-brand hidden-md hidden-lg account col-xs-12"><span>LOGIN</span ></a>
+							<!-- <a href="javascript:void(0)" class="scroll-menu navbar-brand hidden-md hidden-lg account col-xs-12" ng-click="myaccount()" ng-class="{'disableLogin' : loginPathDisable}">MY ACCOUNT</a> -->
+						</div>
+						<div class="col-md-7 col-xs-3">
+							<ul class="nav navbar-nav pull-right col-xs-12 no-padding scroll-menu">
+								<li class="pull-right cart-section">
+									<a class="hidden-xs cart-pull-right">CART(<span id="cartFlag">0</span>)</a>
+									<a class="visible-xs cart-padding" >CART(<span >0</span>)</a>
+								</li>
+                                <li class="pull-right hidden-xs hidden-sm">
+									<a href="javascript:;" id="wishlist-header">WISHLIST</a>
+								</li>
+<li class="pull-right  hidden-xs hidden-sm"><a href="" target="_blank" title="" class="wishlist scrollHide">GOLDEN HARVEST SCHEME</a></li>
+								<li class="pull-right login hidden-xs hidden-sm">
+									<a href="javascript:;" ng-if="loginStatus" class="no-padding-left">(LOGOUT)</a>
+									<a id="loginPath" href="{{loginPath}}" ng-cloak ng-if="!loginStatus" ng-class="{'disableLogin' : loginPathDisable}" target="_self">LOGIN</a>
+								</li>
+								<li class="pull-right hidden-xs hidden-sm">
+									<a href="{{accountSummaryPath}}" class="no-padding-right" id="accountsummary-header" ng-class="{'disableLogin' : accountSummaryPathDisable}"  target="_self">HI <span id="firstName">Titan! </span>
+									</a>
+								</li>
+							</ul>
+						</div>
+                    </div> 
+                    <!--sticky header starts-->
+                    <div class="sticky-header col-md-12 no-padding">
+						<div class="col-md-2 hidden-sm hidden-xs no-padding">
+							<a class="logo-margin col-md-12 hidden-xs" href="/home" onclick="window.location.href = '/home';">
+                                <span class="tanishq-logo"><img src="img/logo.png" class="img-responsive" alt=""></span>
+                                <span class="t-logo"><img src="img/logo-t.png" class="img-responsive" alt=""></span>
+
+                            </a>							
+						</div>
+						<div class="col-md-9 col-xs-12 no-padding">
+						    <div class="col-xs-2 no-padding srch-icon-div">
+								<button type="button" class="navbar-toggle pull-left col-xs-3 collapsed" data-toggle="collapse" data-target="#menu">
+									<div class="burgerIcon">
+										<span></span>
+										<span></span>
+										<span></span>
+									</div>
+								</button>
+							</div>
+							<div class="mob-logo-container col-xs-8">
+								<a class="navbar-brand col-xs-12 hidden-md hidden-lg " href="/home">
+									<img src='img/logo.png'  class="img-responsive tanishq-logo" alt="">
+									<div class="t-logo-container"><img src="img/logo-t.png" class="img-responsive t-logo" alt=""></div>
+								</a>
+							</div>
+							<div class="hidden-md hidden-lg col-xs-2 no-padding search-icon-div">
+								<div class="col-xs-12 search">
+									<!-- <a href="javascript:void(0)" data-toggle="collapse" data-target="#searchBox" class="closeSearch" ng-click="searchtoggle=!searchtoggle;openSearchBox()">
+										<img ng-if="!searchtoggle" src='[Component name="tanishq_design_lib/img/icon/search" rendition="auto" format="url"] ' class="img-responsive" alt="" >
+										 <img ng-if="searchtoggle" src='[Component name="tanishq_design_lib/img/icon/close" rendition="auto" format="url"]' class="img-responsive serch-close" alt="" >
+									</a> -->
+									<a data-toggle="collapse" data-target="#searchBox" class="closeSearch collapsed closeSearch-mobile" ng-click="openSearchBox()"></a>
+
+								</div>						
+							</div>
+                            <div class="col-xs-12 no-padding">
+                            <div class="col-xs-12 collapsible-nav-option collapse navbar-collapse menu-wrapper no-padding" id="menu">
+                                                                <div class="row">
+									<div class="col-xs-12 no-padding main-option">
+										<button type="button" class="hidden-xs select burger-desktop">
+							<img src='img/icon/burger.png' alt="" class="img-responsive">
+						</button>
+
+                                                               <ul class="nav navbar-nav col-xs-12 no-padding panel-group">
+											<li class="center-option">
+												<ul class="nav navbar-nav col-xs-12 no-padding " id="accordion">     												                                                                                                                                               <li class="panel">
+														<div class="panel-heading">
+															<a href="/jewellery" class="hidden-xs hidden-sm sublevel">JEWELLERY</a>
+															<a data-toggle="collapse" data-parent="#accordion" data-target="#jewellery" class="visible-xs visible-sm">JEWELLERY <span class="plus-icon pull-right visible-xs visible-sm"></span></a>
+														</div>
+														<div id="jewellery" class="sub-menu panel-collapse collapse">
+															<div>
+																<ul class="col-md-2 col-md-offset-2 list-unstyled">
+																	<li><a href="/shop/earings" target="_self">Earrings <span class="arrow-right-icon pull-right visible-xs visible-sm"></span></a></li>
+																	<li><a href="/shop/pendents" target="_self">Pendents <span class="arrow-right-icon pull-right visible-xs visible-sm"></span></a></li>
+																	<li><a href="/shop/rings" target="_self">Finger Rings <span class="arrow-right-icon pull-right visible-xs visible-sm"></span></a></li>
+																	<li><a href="/shop/bangles" target="_self">Bangles <span class="arrow-right-icon pull-right visible-xs visible-sm"></span></a></li>
+																	<li><a href="/shop/bracelets" target="_self">Bracelets <span class="arrow-right-icon pull-right visible-xs visible-sm"></span></a></li>
+
+<li><a href="/shop/chains" target="_self">Chains <span class="arrow-right-icon pull-right visible-xs visible-sm"></span></a></li>
+																</ul>
+																<ul class=" col-md-2 list-unstyled">
+																    <li><a href="/shop/nosepins" target="_self">NosePins <span class="arrow-right-icon pull-right visible-xs visible-sm"></span></a></li>
+																	<li><a href="/shop/pendant-earrings-set" target="_self">Pendant and Earrings Set <span class="arrow-right-icon pull-right visible-xs visible-sm"></span></a></li>
+																	<li><a href="/shop/mangalsutra" target="_self">Mangalsutra <span class="arrow-right-icon pull-right visible-xs visible-sm"></span></a></li>
+																	<li><a href="/shop/gold-coins" target="_self">Gold Coins <span class="arrow-right-icon pull-right visible-xs visible-sm"></span></a></li>
+
+<li><a href="/shop/viewAll" target="_self">View All<span class="arrow-right-icon pull-right visible-xs visible-sm"></span></a></li>
+
+																															</ul>
+
+
+																<div class="col-md-3 hidden-xs hidden-sm pull-right subanav-prom">
+																	<a href="/shop/chains" target="_self">
+																	   <img src="img/subnav.png" class="img-responsive" alt="">
+																		<div>
+																			<p>Shop Gold and Diamond Earring</p>
+																			<h3>Shop now</h3>
+																		</div>
+																	</a>
+																</div>
+
+															</div>
+	</div>
+													
+													</li>
+
+
+
+
+
+<li class="panel">
+														<div class="panel-heading">
+
+<a  href="/shop/viewAll?q=gold" class="sublevel">Gold</a>
+																													<!--a data-toggle="collapse" data-parent="#accordion-main,#accordion-main1,#accordion" href="#gold" class="visible-xs visible-sm">Gold <span class="plus-icon pull-right visible-xs visible-sm"></span></a-->
+
+														</div>
+														<div id="Gold" class="sub-menu panel-collapse collapse">
+															<div>
+																<ul class="col-md-2 col-md-offset-2 list-unstyled">
+																	<li><a href="/shop/earings" target="_self">Earings <span class="arrow-right-icon pull-right visible-xs visible-sm"></span></a></li>
+																	<li><a href="/shop/pendents" target="_self">Pendents <span class="arrow-right-icon pull-right visible-xs visible-sm"></span></a></li>
+																	<li><a href="/shop/finger-rings" target="_self">Finger Rings <span class="arrow-right-icon pull-right visible-xs visible-sm"></span></a></li>
+																	<li><a href="/shop/bangales" target="_self">Bangales <span class="arrow-right-icon pull-right visible-xs visible-sm"></span></a></li>
+																	<li><a href="/shop/bracelets" target="_self">Bracelets <span class="arrow-right-icon pull-right visible-xs visible-sm"></span></a></li>
+
+<li><a href="/shop/chains" target="_self">Chains <span class="arrow-right-icon pull-right visible-xs visible-sm"></span></a></li>
+																</ul>
+																<ul class=" col-md-2 list-unstyled">
+																    <li><a href="/shop/nosepins" target="_self">NosePins <span class="arrow-right-icon pull-right visible-xs visible-sm"></span></a></li>
+																	<li><a href="/shop/pendant-earrings-set" target="_self">Pendant and Earrings Set <span class="arrow-right-icon pull-right visible-xs visible-sm"></span></a></li>
+																	<li><a href="/shop/mangalsutra" target="_self">Mangalsutra <span class="arrow-right-icon pull-right visible-xs visible-sm"></span></a></li>
+																	<li><a href="/shop/gold-coins" target="_self">Gold Coins <span class="arrow-right-icon pull-right visible-xs visible-sm"></span></a></li>
+
+</ul>
+																<ul class=" col-md-2 list-unstyled">
+																	
+																</ul>
+																<div class="col-md-3 hidden-xs hidden-sm pull-right subanav-prom">
+																	<a href="/shop/subham" target="_self">
+																	   <img src='img/subnav.png' class="img-responsive" alt="">
+																		<div>
+																			<p>Buy Gold Earring</p>
+																			<h3>Shop now</h3>
+																		</div>
+																	</a>
+																</div>
+															</div>
+														</div>
+													</li>
+			
+<li 
+class="panel">
+														<div class="panel-heading">
+															<a  href="/shop/search-results/availability=include-out-of-stock&jewellery-type=diamond?q=diamond" class="sublevel">DIAMONDS</a>
+														</div>
+
+<div id="Diamond" class="sub-menu panel-collapse collapse">
+															<div>
+	
+														<ul class="col-md-2 col-md-offset-2 list-unstyled">
+																	<li><a href="/shop/earings" target="_self">Earings <span class="arrow-right-icon pull-right visible-xs visible-sm"></span></a></li>
+																	<li><a href="/shop/pendents" target="_self">Pendents <span class="arrow-right-icon pull-right visible-xs visible-sm"></span></a></li>
+																	<li><a href="/shop/finger-rings" target="_self">Finger Rings <span class="arrow-right-icon pull-right visible-xs visible-sm"></span></a></li>
+																	<li><a href="/shop/bangales" target="_self">Bangales <span class="arrow-right-icon pull-right visible-xs visible-sm"></span></a></li>
+																	<li><a href="/shop/bracelets" target="_self">Bracelets <span class="arrow-right-icon pull-right visible-xs visible-sm"></span></a></li>
+
+<li><a href="/shop/chains" target="_self">Chains <span class="arrow-right-icon pull-right visible-xs visible-sm"></span></a></li>
+																</ul>
+																<ul class=" col-md-2 list-unstyled">
+																    <li><a href="/shop/nosepins" target="_self">NosePins <span class="arrow-right-icon pull-right visible-xs visible-sm"></span></a></li>
+																	<li><a href="/shop/pendant-earrings-set" target="_self">Pendant and Earrings Set <span class="arrow-right-icon pull-right visible-xs visible-sm"></span></a></li>
+																	<li><a href="/shop/mangalsutra" target="_self">Mangalsutra <span class="arrow-right-icon pull-right visible-xs visible-sm"></span></a></li>
+																	<li><a href="/shop/gold-coins" target="_self">Gold Coins <span class="arrow-right-icon pull-right visible-xs visible-sm"></span></a></li>
+
+</ul>
+																<ul class=" col-md-2 list-unstyled">
+																	
+																</ul>
+																<div class="col-md-3 hidden-xs hidden-sm pull-right subanav-prom">
+																	<a href="/shop/subham" target="_self">
+																	   <img src='img/subnav.png' class="img-responsive" alt="">
+																		<div>
+																			<p>Buy Diamond Earring</p>
+																			<h3>Shop now</h3>
+																		</div>
+																	</a>
+																</div>
+															</div>
+														</div>
+												
+												</li>
+													<!--li class="panel">
+														<div class="panel-heading">
+															<a class="hidden-xs hidden-sm sublevel" href="/shop/search-results/availability=include-out-of-stock&jewellery-type=diamond?q=diamond">DIAMONDS</a>
+															<a data-toggle="collapse" data-parent="#accordion-main,#accordion-main1,#accordion" href="#diamonds" class="visible-xs visible-sm">DIAMONDS <span class="plus-icon pull-right visible-xs visible-sm"></span></a>
+
+														</div>
+														<div id="diamonds" class="sub-menu panel-collapse collapse">
+															<div>
+																<ul class="col-md-2 col-md-offset-2 list-unstyled">
+																	<li>TANISHQ DIAMONDS <span class="arrow-right-icon pull-right visible-xs visible-sm"></span></li>
+																	<li>DIAMOND PREMISES<span class="arrow-right-icon pull-right visible-xs visible-sm"></span></li>
+																	<li>SOLITAIRE<span class="arrow-right-icon pull-right visible-xs visible-sm"></span></li>
+																</ul>
+																
+																<div class="col-md-3 hidden-xs hidden-sm pull-right subanav-prom">
+																	<a href="/shop/subham" target="_self">
+																		<img defer-image-load image-src='[Component name="tanishq_design_lib/img/header/diamonds_img" rendition="auto" format="url"] ' class="img-responsive" alt="">
+																		<div>
+																			<p>Earrings upto 40% off</p>
+																			<h3>Shop now</h3>
+																		</div>
+																	</a>
+																</div>
+															</div>
+														</div>
+													</li-->
+
+
+<li class="panel">
+														<div class="panel-heading">
+															<a href="/collection" class="hidden-xs hidden-sm sublevel">COLLECTION</a>
+															<a data-toggle="collapse" data-parent="#accordion-main,#accordion-main1,#accordion" href="#collection" class="visible-xs visible-sm">COLLECTION <span class="plus-icon pull-right visible-xs visible-sm"></span></a>
+
+														</div>
+														<div id="collection" class="sub-menu panel-collapse collapse">
+															<div>
+																<ul class="col-md-2 col-md-offset-2 list-unstyled">
+																	<li><a href="/shop/swarnam" target="_self">SWARNAM <span class="arrow-right-icon pull-right visible-xs visible-sm"></span></a></li>
+																	<li><a href="/shop/mirayah	" target="_self">MIRAYAH <span class="arrow-right-icon pull-right visible-xs visible-sm"></span></a></li>
+																	<li><a href="/shop/fine-line" target="_self">FINE LINE <span class="arrow-right-icon pull-right visible-xs visible-sm"></span></a></li>
+																	<li><a href="/shop/subham" target="_self">SUBHAM <span class="arrow-right-icon pull-right visible-xs visible-sm"></span></a></li>
+																	<li><a href="/shop/queen-of-hearts" target="_self">QUEEN OF HEARTS <span class="arrow-right-icon pull-right visible-xs visible-sm"></span></a></li>
+																	<li><a href="/shop/amara" target="_self">AMARA <span class="arrow-right-icon pull-right visible-xs visible-sm"></span></a></li>
+																	<li><a href="/shop/mismatch" target="_self">MISMATCH <span class="arrow-right-icon pull-right visible-xs visible-sm"></span></a></li>
+																</ul>
+																<ul class=" col-md-2 list-unstyled">
+																	<li><a href="/shop/niloufer" target="_self">NILOUFER <span class="arrow-right-icon pull-right visible-xs visible-sm"></span></a></li>
+																	<li><a href="/shop/uttara" target="_self">UTTARA <span class="arrow-right-icon pull-right visible-xs visible-sm"></span></a></li>
+																	<li><a href="/shop/divyam" target="_self">DIVYAM <span class="arrow-right-icon pull-right visible-xs visible-sm"></span></a></li>
+																	<li><a href="/shop/mehek" target="_self">MEHEK <span class="arrow-right-icon pull-right visible-xs visible-sm"></span></a></li>
+																	<li><a href="/shop/zuhur" target="_self">ZUHUR <span class="arrow-right-icon pull-right visible-xs visible-sm"></span></a></li>
+																	<li><a href="/shop/iva" target="_self">IVA <span class="arrow-right-icon pull-right visible-xs visible-sm"></span></a></li>
+																	<li><a href="/shop/limited-edition" target="_self">LIMITED EDITION <span class="arrow-right-icon pull-right visible-xs visible-sm"></span></a></li>
+																</ul>
+																<ul class=" col-md-2 list-unstyled">
+																	
+																</ul>
+																<div class="col-md-3 hidden-xs hidden-sm pull-right subanav-prom">
+																	<a href="/shop/subham" target="_self">
+																	   <img src='img/subnav.png' class="img-responsive" alt="">
+																		<div>
+																			<p>Earrings upto 40% off</p>
+																			<h3>Shop now</h3>
+																		</div>
+																	</a>
+																</div>
+															</div>
+														</div>
+													</li>
+
+
+
+																										<li class="panel">
+														<div class="panel-heading">
+															<a href="/rivaah" class="sublevel">RIVAAH</a>
+														</div>
+													</li>
+													<li class="panel">
+														<div class="panel-heading">
+															<a href="/aveer" class="sublevel">AVEER</a>
+														</div>
+													</li>
+<li class="panel">
+														<div class="panel-heading">
+															<a href="/inside-tanishq" class="hidden-xs hidden-sm sublevel">INSIDE TANISHQ</a>
+															<a data-toggle="collapse" data-parent="#accordion-main,#accordion-main1,#accordion" href="#inside" class="visible-xs visible-sm">INSIDE TANISHQ <span class="plus-icon pull-right visible-xs visible-sm"></span></a>
+
+														</div>
+														<div id="inside" class="sub-menu panel-collapse collapse">
+															<div>
+																<ul class="col-md-2 col-md-offset-2 list-unstyled">
+																	<li><a href="/inside-tanishq/brand-story" target="_self">BRAND STORY <span class="arrow-right-icon pull-right visible-xs visible-sm"></span></a></li>
+																	<li><a href="/inside-tanishq/product-philosophy" target="_self">PRODUCT PHILOSOPHY <span class="arrow-right-icon pull-right visible-xs visible-sm"></span></a></li>
+																	<li><a href="/inside-tanishq/design-philosophy" target="_self">DESIGN PHILOSOPHY <span class="arrow-right-icon pull-right visible-xs visible-sm"></span></a></li>
+																	<li><a href="/inside-tanishq/karigar-story" target="_self">KARIGAR STORY <span class="arrow-right-icon pull-right visible-xs visible-sm"></span></a></li>
+
+																</ul>
+																
+																<div class="col-md-3 hidden-xs hidden-sm pull-right subanav-prom">
+																    <a href="/shop/subham" target="_self">
+																		<img src='img/subnav.png' class="img-responsive" alt="">
+																		<div>
+																			<p>Earrings upto 40% off</p>
+																			<h3>Shop now</h3>
+																		</div>
+																	</a>
+																</div>
+															</div>
+														</div>
+													</li>
+<li class="panel">
+														<div class="panel-heading">
+															<a href="/shop/gifting?type=gifting" class="sublevel">Gifting</a>
+														</div>
+													</li>
+
+<li class="panel">
+														<div class="panel-heading">
+															<a href="/shop/gifting?type=goffers" class="sublevel">Offers</a>
+														</div>
+													</li>													
+													<!--<li class="panel">
+														<div class="panel-heading">
+															<a class="hidden-xs hidden-sm sublevel">STORIES</a>
+															<a data-toggle="collapse" data-parent="#accordion-main,#accordion-main1,#accordion" href="#stories" class="visible-xs visible-sm">STORIES <span class="plus-icon pull-right visible-xs visible-sm"></span></a>
+
+														</div>
+														<div id="stories" class="sub-menu panel-collapse collapse">
+															<div>
+																<ul class="col-md-2 col-md-offset-2 list-unstyled">
+																	<li>BLOGS <span class="arrow-right-icon pull-right visible-xs visible-sm"></span></li>
+																	<li>TESTIMONIALS<span class="arrow-right-icon pull-right visible-xs visible-sm"></span></li>
+																</ul>
+																
+																<div class="col-md-3 hidden-xs hidden-sm pull-right subanav-prom">
+																	<a href="/shop/subham" target="_self">
+																		<img defer-image-load image-src='[Component name="tanishq_design_lib/img/header/stories_img" rendition="auto" format="url"] ' class="img-responsive" alt="">
+																		<div>
+																			<p>Earrings upto 40% off</p>
+																			<h3>Shop now</h3>
+																		</div>
+																	</a>
+																</div>
+															</div>
+														</div>
+													</li-->
+													
+													<!--li class="panel">
+														<div class="panel-heading">
+															<a  href="/shop/search-results/availability=include-out-of-stock&mother-brand=mia?q=mia" class="sublevel">MIA</a>
+														</div>
+
+</li>
+	<li class="visible-sm visible-xs panel"><div class="panel-heading"><a href="javascript:void(0)" ng-click="navigateToStore()">find a store<span class="store-accord-icon pull-right"></span></a></div></li>
+											<li class="visible-sm visible-xs panel"><div class="panel-heading"><a href="javascript:;" id="wishlist-header" ng-class="{'disableLogin' : wishListPathDisable}" ng-click="wishlist()" target="_self">wishlist<span class="wishlist-accord-icon pull-right"></span></a></div></li-->
+											<!-- <li class="pull-right locator search hidden-xs hiddem-sm">
+												<img src='[Component name="tanishq_design_lib/img/icon/store-locator" rendition="auto" format="url"] ' class="img-responsive hidden-xs hidden-sm" alt="">
+												<!--    <a href="#" class="visible-sm visible-xs">FIND STORE</a>-->
+											<!-- </li> -->
+												<!--changes for currency in mobile -->
+													<!--<ul id="switcher" class="visible-xs visible-sm nav navbar-nav col-xs-12 no-padding "> -->										<li class="visible-sm visible-xs panel currency-switcher"><div class="panel-heading">
+                                                                
+					<a id="currencySelectorButton" data-toggle="collapse" data-parent="#accordion-main,#accordion-main1,#switcher,#accordion" data-target="#currencyheader" ng-click="currencyScroll()">currency<span class="plus-icon pull-right visible-xs visible-sm"></span></a></div>
+											
+																<div id="currencyheader" class="sub-menu panel-collapse collapse">
+																	<div class="container">
+																		<ul class="row col-xs-12 col-md-10 col-md-offset-2 currency currency-logos no-padding" ng-if="windowsizeval" ng-controller="currencySwitch">
+																			<li class="col-xs-6 col-sm-2 no-padding" ng-repeat="crncy in currencySelectorData" ng-class="{'currencyEnable':crncy.additionalValue[0].value === cookieCurrencyvalue, 'currencyEnableFirst': $first && cookieCurrencyvalue === undefined}" ng-click="(crncy.additionalValue[0].value != cookieCurrencyvalue) && getCurrencyValue(crncy.additionalValue[0].value,crncy.decimalPlaces)">
+																				<button>{{crncy.additionalValue[0].value}}<span ng-if="!(crncy.additionalValue[0].value == 'INR')">{{crncy.currencySymbol}}</span>
+																					<span ng-if="crncy.additionalValue[0].value == 'INR'"><i class="fa fa-inr"></i></span></button>
+																			</li>
+																   
+																		</ul>
+																	</div>
+																 </div>
+															</li>
+											</ul>
+												
+											</li>													
+										</ul>
+									</div>
+								</div>
+							</div>
+                                </div>
+						</div>
+						<div class="col-md-1 hidden-sm hidden-xs search-icon-div">                                              
+							<div class="col-md-6 col-xs-12 search locator-icon">
+								<a href="javascript:void(0)" ng-click="navigateToStore()">
+									<img src='img/icon/store-locataor.svg' class="img-responsive hidden-xs hidden-sm" alt="">
+								</a>
+							</div>	
+                                                        <div class="col-md-6 col-xs-12 search search-icon">
+								<!-- <a href="javascript:void(0)" data-toggle="collapse" data-target="#searchBox" class="closeSearch" ng-click="searchtoggle=!searchtoggle;openSearchBox()">
+									<span  ng-if="!searchtoggle"><img src='[Component name="tanishq_design_lib/img/icon/search" rendition="auto" format="url"] ' class="img-responsive" alt="" ></span>
+									<span ng-if="searchtoggle"><img src='[Component name="tanishq_design_lib/img/icon/close" rendition="auto" format="url"]' class="img-responsive serch-close" alt=""></span>
+								</a> -->
+                                                                <a id="tanishqSearch" data-toggle="collapse" data-target="#searchBox" class="closeSearch collapsed" ng-click="openSearchBox()"></a>
+							</div>						
+						</div>
+					</div> 
+                </div>
+            </div>
+        </nav>
+    </header>
+    </div>
+   
+<div class="search-box-wrapper">
+					<div class="container">
+						<div class="row">
+					<div class="col-xs-12 search-box tq-search-box collapse" id="searchBox" aria-expanded="true">
+						<div class="col-md-offset-2 col-md-8 no-padding">
+						<div class="searchBoxInput col-xs-12">
+							<form name="searchForm" id="searchForm" autocomplete="off">
+								<input type="text" class="form-control" maxlength="100" id="searchTextBox" autocomplete="off" placeholder="Search our products...">
+								<span class="input-group-btn">
+									<button ng-disabled="!searchTerm" type="submit" form="searchForm" class="no-btn-search"></button>
+								</span>
+							</form>
+						</div>
+						<div ng-if="showSearchResultBox" class="searchOpenBox">
+							<div ng-if="!showMatchProd">
+<!--
+								<div class="col-xs-12 col-md-6 search-product col-md-push-6 clearfix" ng-if="showList && !showRecentSearch">
+									<p>Products</p>
+									<div class="col-xs-12" >
+										<a href="" role="menuitem" ng-click="closeSearchBox()">
+											<div class="row">
+												<div class="col-xs-3 no-padding-left">
+													<div class="image">
+														<img src="img/suggestion.png" class="img-responsive">
+													</div>
+												</div>
+												<div class="col-xs-9 ">
+													<p class="name">Tanishq Earring</p>
+													<h3>ABCFGGGGGG</h3>
+													<span ng-if="!product.isGiftCard">
+														<p>
+															<span ng-if="!product.showOfferPrice" class="price" >11111</span>
+																<span ng-if="product.offerPrice && product.showOfferPrice" class="price"><span ng-bind-html="product.offerPrice | allCurrencyFilter"></span><span ng-if="product.price != null">&nbsp;Was
+																<span class="offer-price" ng-bind-html="product.price | allCurrencyFilter"></span>
+																</span>
+															</span>
+														</p>
+													</span>
+													
+													<span ng-if="product.isGiftCard">
+                                                    <span ng-bind-html="product.gcPriceRange.lowerLimit | allCurrencyFilter"></span><span>&nbsp; - &nbsp;</span><span ng-bind-html="product.gcPriceRange.upperLimit | allCurrencyFilter"></span>
+													</span>
+												</div>
+											</div>
+										</a>
+									</div>
+								</div>
+-->
+								<div class="col-xs-12 col-md-6 search-product col-md-push-6 clearfix" ng-if="showRecentSearch && !showList">
+									<p>Popular Products</p>
+									<div class="col-xs-12">
+										<a href="{{pdpPath}}{{product.urlKeyword}}" data-index="{{key+1}}" role="menuitem" ng-click="closeSearchBox()">
+											<div class="row">
+												<div class="col-xs-3 no-padding-left">
+													<div class="image">
+														<img src="img/suggestion.png" class="img-responsive">
+													</div>
+												</div>
+												<div class="col-xs-9 ">
+													<p class="name">Tanishq Fine Line 18KT Yellow Gold and Diamond Necklace</p>
+<!--
+													<h3 ng-if="product.OutOfStockFacet">{{product.child_partNumber_ntk}}</h3>
+													<h3 ng-if="!product.OutOfStockFacet">{{product.partNumber | oosFilter}}</h3>
+-->
+													<h3>AVFGBFHFGH</h3>
+<!--									
+													<span ng-if="!product.isGiftCard">
+											<p class="price">
+										<span ng-if="!product.showOfferPrice" class="price" ng-bind-html="product.price | allCurrencyFilter"></span>
+													<span ng-if="product.showOfferPrice" class="offer-price"><span ng-bind-html="product.offerPrice | allCurrencyFilter"></span> Was</span>
+													<span ng-if="product.showOfferPrice" class="price" ng-bind-html="product.price | allCurrencyFilter"></span>
+													</p>
+													</span>
+-->
+													<span ng-if="!product.isGiftCard">
+														<p>
+															<span ng-if="!product.showOfferPrice" class="price" ng-bind-html="product.price | allCurrencyFilter"></span>
+																<span ng-if="product.offerPrice && product.showOfferPrice" class="price"><span ng-bind-html="product.offerPrice | allCurrencyFilter"></span><span ng-if="product.price != null">&nbsp;Was
+																<span class="offer-price" ng-bind-html="product.price | allCurrencyFilter"></span>
+																</span>
+															</span>
+														</p>
+													</span>
+													<span ng-if="product.isGiftCard">
+                                                    <span ng-bind-html="product.gcPriceRange.lowerLimit | allCurrencyFilter"></span><span>&nbsp; - &nbsp;</span><span ng-bind-html="product.gcPriceRange.upperLimit | allCurrencyFilter"></span>
+													</span>
+												</div>
+											</div>
+										</a>
+									</div>
+								</div>
+								<div class="col-xs-12 hidden-md hidden-lg">
+									<hr>
+								</div>
+								<div class="col-xs-12 col-md-6 col-md-pull-6 suggestion clearfix" ng-if="showList && !showRecentSearch">
+									<p>Suggestions</p>
+									<div class="col-xs-12 no-padding-left suggestion-content" ng-repeat="(key,option) in suggestionDetail | limitTo: 5" id="suggestionLeft{{key}}">
+										<!--
+									<h3>Jewellery <span></span> Necklace</h3>
+									<p>Tanishq Fine Line 18KT Yellow Gold and Diamond Necklace</p>
+-->
+										<a href="{{option.frontUrl}}" data-index="{{key}}" role="menuitem" target="_self">
+<!--										<h3 class="search-path" data-index="{{key}}" role="menuitem">{{option.path}} </h3>-->
+										<h3 class="search-path" data-index="{{key}}" role="menuitem">Tanishq Fine Line 18KT Yellow Gold and Diamond Necklace</h3>
+										<p ng-bind-html="option.displayName | toHTML"></p>
+											</a>
+									</div>
+								</div>
+<!--
+								<div class="col-xs-12 col-md-6 col-md-pull-6 suggestion clearfix" ng-if="showRecentSearch && !showList">
+									<p>Your Recent Searches</p>
+									<div class="col-xs-12 no-padding-left suggestion-content" ng-repeat="(key,recent) in recentSuggestions | limitTo:5 track by $index" id="suggestionLeft{{key}}">
+										<p><a href="" data-index="{{key}}" role="menuitem" ng-bind="recent" ng-click="moveToSearch(this)" target="_self"></a></p>
+									</div>
+								</div>
+-->
+
+							</div>
+							<div class="col-xs-12 col-md-6 search-product exact-search" ng-if="showMatchProd">
+								<p>Products</p>
+								<div class="col-xs-12" ng-repeat="(key,product) in newSearchProduct | limitTo: 1" id="suggestionLeft{{key}}">
+									<a href="{{pdpPath}}{{product.urlKeyword}}" data-index="{{key+1}}" role="menuitem" ng-click="closeSearchBox()">
+										<div class="row">
+											<div class="col-xs-3 no-padding-left">
+												<div class="image">
+													<img src="img/suggestion.png" class="img-responsive">
+												</div>
+											</div>
+											<div class="col-xs-9 ">
+												<p class="name">Tanishq Fine Line 18KT Yellow Gold and Diamond Necklace</p>
+												<h3>SAFADSFSDFSD</h3>
+												<span ng-if="!product.isGiftCard">
+														<p>
+															<span ng-if="!product.showOfferPrice" class="price" ng-bind-html="product.price | allCurrencyFilter"></span>
+																<span ng-if="product.offerPrice && product.showOfferPrice" class="price"><span ng-bind-html="product.offerPrice | allCurrencyFilter"></span><span ng-if="product.price != null">&nbsp;Was
+																<span class="offer-price" ng-bind-html="product.price | allCurrencyFilter"></span>
+																</span>
+															</span>
+														</p>
+													</span>
+												<span ng-if="product.isGiftCard">
+                                                    <span ng-bind-html="product.gcPriceRange.lowerLimit | allCurrencyFilter"></span><span>&nbsp; - &nbsp;</span><span ng-bind-html="product.gcPriceRange.upperLimit | allCurrencyFilter"></span>
+												</span>
+											</div>
+										</div>
+									</a>
+								</div>
+							</div>
+						</div>
+						</div>
+					</div>
+				</div>
+			</div>
+</div>
+
+
+
+<!--------------------------------------------------- BODY CONTENT --------------------------------------------->
+ 
+<section  class="hero-section" style="font-family:sans-serif;" >
+    <span class="pend">
+    <img src="./img/ll1.png" id="abc" style=" z-index:1;top:0;left:3vw;width:7%;max-width:80px; height:auto;" class="invi pendulum " alt="">
+    <img src="./img/ll2.png" style="z-index:1;top:0;left:13vw;max-width:65px;width:6%;height:auto;" class="invi pendulumReverse" alt="">
+    <img src="./img/ll2.png" style="z-index:1;top:0;right:13vw;max-width:65px;width:6%;height:auto;" class=" invi pendulum " alt="">
+    <img src="./img/ll1.png" style="z-index:1;top:0;right:3vw;max-width:80px;width:7%;height:auto;" class="invi pendulumReverse " alt="">
+  </span>
+    <div style="position: absolute;top:0;right: 0;left:0;bottom:0;background-color: white;opacity:0;" ></div>
+
+      <div class="container" style="padding-top:80px;">
+         <div class="">
+          <div class="firstlogo" >
+           <center>
+           <img src="./img/logo black.png" class=" b-logo" style="opacity:1;width:20%;min-width:150px;max-width:200px;margin-top:50px;margin-bottom:50px;" alt="">
+		   <center>
+         
+        </div>
+      </div>
+
+    <center>
+      <div class="row " style="position:relative;">
+        <div class="col-xl-8 col-xl-offset-2 col-lg-8 col-lg-offset-2 col-md-8 col-md-offset-2 " style="z-index:2;" style="position:absolute;left:50%;">
+			
+           <h1 class=" "style="font-weight:300;margin-bottom:30px;">Meena Bazaar</h1> 
+		
+           <p class="lead " id="mb-cont" style="font-size:20px;font-family:serif;margin-bottom: 70px;text-align: center;">
+            
+              
+            
+               DUBAI - A melting pot of cultures and nationalities, a pinnacle of cosmopolitan sensibilities and a cornucopia of art and beauty. In an era of rapid globalization, Dubai has time and again retained its unique DNA - of avant garde aesthetics fused with traditional Arabic influences across architecture, music and cuisine
+			
+              
+            
+           </p>
+		</div>
+	  </div>
+
+
+	 
+        
+        
+      
+	</center>
+
+	
+
+
+	
+        
+    </div> 
+
+<div class="container-fluid">
+	<center>
+		<div class="row ">
+		  <div class="col-xs-12 col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3 " style="z-index:2;margin-bottom:100px;">
+			  
+			 
+			 <div  style="position:relative;">
+			  
+  
+			  <!-- <i id="play1" class="far fa-play-circle  text-white" style="cursor:pointer;font-size: 70px; position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);z-index: 1;"></i>
+			  <i id="pause1" class="far fa-pause-circle  text-white" style="cursor:pointer;font-size: 70px; position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);z-index: 0;"></i>
+			  <i id="fullScreen1" class=" fas fa-expand  text-white" style="cursor:pointer;font-size: 30px; position:absolute;bottom:6px;right:3px;z-index: 0;" ></i> -->
+  
+  
+			 <!-- <video id="myVideo1" poster="./img/vidPoster1.png" class="rounded" style=" position:relative;width:100%" controlsList="nodownload"  disablePictureInPicture> 
+			  <source src="https://www.youtube.com/embed/bs2p2q7TzdY" type="video/mp4">
+			  </video> -->
+			  <div class="YTframe videoYT2 vidFirst pb-1 px-1 rounded"  >
+				<div class="videoWrapper">
+				  <iframe width="800" height="450" src="https://www.youtube.com/embed/bs2p2q7TzdY" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+				</div>
+			  </div>
+  
+			 </div>
+		  
+		  </div>
+		</div>
+	  </center>
+	</div>
+
+   </section>
+
+
+
+<section  class=" slider-section" style="z-index:2;">
+		
+		    <div class=" container-fluid  "  style="padding-top:50px;padding-bottom:50px;">
+	        	<div class="row "> 
+			        <div class="col-md-3"></div>
+					     <div class="col-md-9 " style="padding-top:10px;padding-bottom:50px; padding-right:10px;">
+					        <h1 class="text-center " style="font-weight:lighter;color:white;font-size:40px;margin-bottom:20px;">Dubai Special Collection</h1>
+
+							<div class="swiper-container">
+								<div class="swiper-wrapper">
+								  <div class="swiper-slide"><img src="./img/pic1.png" onclick="location.href='https://www.tanishq.ae/product/setproduct2-5138172dwaba00'" class="img-fluid" style="cursor:pointer;max-width:180px" alt=""></div>
+								  <div class="swiper-slide"><img src="./img/pic2.png"  onclick="location.href='https://www.tanishq.ae/product/tanishq-22kt-yellow-gold-necklace-set-with-teardrop-design-and-rawa-balls-5110692zwaaa00'" class="img-fluid" style="cursor:pointer;max-width:180px" alt="" ></div>
+								  <div class="swiper-slide"><img src="./img/pic3.png" onclick="location.href='https://www.tanishq.ae/product/setproduct2-5137192bk1bap3'"  class="img-fluid" style="cursor:pointer;max-width:180px" alt=""></div>
+							
+								 
+								 
+								
+								</div>
+							
+								<div class="swiper-button-next " style="color:white;padding-right:10px;"></div>
+								<div class="swiper-button-prev "  style="color:white;padding-left:10px;" ></div>
+							
+								</div>
+
+					     </div>
+						
+			       </div>
+	            </div>
+</section>
+
+
+
+	
+
+
+
+</body>
+
+</html>
+
+
+
+
+
+
+
+	 </div>
+   </div>
+ </div>
+	
+	</section>
+
+
+
+	<section  style="z-index:3; position:relative;background: url(./img/lightt.png);background-attachment: fixed; ">
+		<!-- <div style="position:absolute;top:0;right:0;left:0;bottom:0;background-color: white;opacity:0.3;"></div> -->
+		
+		<div  style="position:relative;overflow: hidden; height:300px;" >
+		  
+		  <img src="./img/lamp-big.png" style="z-index:1;position:absolute;top:-65px;left:4vw;width:5%;max-width:50px;min-width:30px; height:auto;" class="pendulum" alt="">
+		  <img src="./img/lamp-small.png" style="z-index:1;position:absolute;top:-30px;left:14vw;max-width:45px;width:5%;height:auto;min-width:25px;" class="pendulumReverse" alt="">
+		  <img src="./img/lamp-small.png" style="z-index:1;position:absolute;top:-30px;right:14vw;max-width:45px;width:5%;height:auto;min-width:25px;" class="pendulum" alt="">
+		  <img src="./img/lamp-big.png" style="z-index:1;position:absolute;top:-65px;right:4vw;max-width:50px;width:5%;height:auto;min-width:30px;" class="pendulumReverse" alt="">
+		  
+		  <div class="container-fluid centerSet" >
+			<h1 class="text-center" style="margin-top:10px;margin-bottom:10px;font-size:45px;">Inspiration</h1>
+			<center>
+			<img src='./img/underline.png' class="img-fluid" alt="" style="max-width :200px;width:100%;height:auto;">
+		  </center>
+		  </div>
+			
+		</div>
+	  
+	  
+		<div class="first-ins container-fluid" >
+	  
+		</div>
+	  
+		<!------------------------------------      CEILING SECTION      ------------------------------------->
+		<div class="container-fluid inspiration-bg" style="margin-top:0; background-image: url(./img/chandelierresized.jpg);">
+		  <div class="gradient-overlay-div-r"></div>
+	  
+	  
+	  
+	  
+		  
+		  <div class="row " >
+			<div class=" col-lg-4 col-md-12 col-sm-12 ">
+				<div class="card  inspiration-card"  >
+				 
+				  <h4 class=" text-center ">Ceiling <br> & <br>
+					Chandelier Spaces</h4>
+					<center>
+					  <img src="./img/underline.png" class="img-fluid mb-1 pb-2 px-5" alt="">
+					</center>
+				  <p class="text-justify">
+					Opulent Arabic-inspired pendant lamps dangling from the center of the ceiling await you at the very entrance, soaking
+					you in a warm and radiant welcome. The
+					ceiling that houses the lamps is treated
+					with Khatamband styled lattice, bordered
+					beautifully by Bastakiya quarter inspired
+					brackets This whole cove is finished with
+					an outer floral patterned running motif
+					band. The same treatment of chandelier
+					and ceiling design is continued on the first
+					floor.
+				  </p>
+				</div>
+			</div>
+			
+		  </div>
+	  
+	  <!------------------------------------      CEILING SECTION END    ------------------------------------>
+		
+	  </div>
+	  
+	  
+	  <!------------------------------------      SECOND VIDEO SECTION     ------------------------------------>
+	  
+	  <div class="container-fluid  " style="position:relative;overflow-x: hidden;">
+	  
+	  
+			  <!---------------------      Lamp SECTION     ----------------------->
+	  
+			  <img src="./img/lamp-big.png"  style="min-width:35px;z-index:1;position:absolute;top:0;left:3vw;width:7%;max-width:80px; height:auto;" class="pendulum " alt="">
+			  <img src="./img/lamp-small.png" style="min-width:31px;z-index:1;position:absolute;top:0;left:13vw;max-width:65px;width:6%;height:auto;" class="pendulumReverse" alt="">
+			  <img src="./img/lamp-small.png" style="min-width:31px;z-index:1;position:absolute;top:0;right:13vw;max-width:65px;width:6%;height:auto;" class="pendulum" alt="">
+			  <img src="./img/lamp-big.png" style="min-width:35px; z-index:1;position:absolute;top:0;right:3vw;max-width:80px;width:7%;height:auto;" class="pendulumReverse" alt="">
+	  
+			 <!---------------------      Lamp SECTION END    ----------------------->
+	  
+	  
+			 <!---------------------      video2 SECTION     ----------------------->
+			 <center>
+				<div class="row " style="padding-top:200px;">
+				  <div class="col-xs-12 col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3 " style="z-index:2;">
+					  
+					 
+					 <div  style="position:relative;">
+					  
+		  
+					  <!-- <i id="play1" class="far fa-play-circle  text-white" style="cursor:pointer;font-size: 70px; position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);z-index: 1;"></i>
+					  <i id="pause1" class="far fa-pause-circle  text-white" style="cursor:pointer;font-size: 70px; position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);z-index: 0;"></i>
+					  <i id="fullScreen1" class=" fas fa-expand  text-white" style="cursor:pointer;font-size: 30px; position:absolute;bottom:6px;right:3px;z-index: 0;" ></i> -->
+		  
+		  
+					 <!-- <video id="myVideo1" poster="./img/vidPoster1.png" class="rounded" style=" position:relative;width:100%" controlsList="nodownload"  disablePictureInPicture> 
+					  <source src="https://www.youtube.com/embed/bs2p2q7TzdY" type="video/mp4">
+					  </video> -->
+					  <div class="YTframe videoYT2 vidFirst"  >
+						<div class="videoWrapper">
+						  <iframe width="800" height="450" src="https://www.youtube.com/embed/bs2p2q7TzdY" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+						</div>
+					  </div>
+		  
+					 </div>
+				  
+				  </div>
+				</div>
+			  </center>
+		<!---------------------      video2 SECTION  end   ----------------------->
+	  
+	  </div>
+	  
+	  <!------------------------------------    SECOND VIDEO SECTION END    ------------------------------------>
+	  
+	  
+	  <!------------------------------------      STAIR SECTION      -------------------------------------->
+	  
+	  <div class="container-fluid inspiration-bg" style="background-image: url(./img/stair\ resized.jpg);" >
+		<div class="gradient-overlay-div-l"></div>
+	  
+		<div class="row " >
+		  <div class="col-lg-5 col-md-12 col-sm-12"></div>    
+		  <div class="col-lg-2 col-md-12 col-sm-12"></div>    
+		  
+		  <div class=" col-lg-5 col-md-12 col-sm-12 " style="padding-bottom: 200px; ">
+			  <div class="card py-4 px-3 inspiration-card" >
+				<h4 class=" text-center">Staircase Wall, <br>
+				  Handrail & Balustrades</h4>
+				  <center>
+					<img src="./img/underline.png" class="img-fluid mb-2 pb-2 px-5" alt="">
+				  </center>
+				  <p class="text-justify">To accompany you as you step into the
+					next level are elegant stairways treated
+					with wooden handrails and iron
+					balusters, inspired by prominent Islamic
+					motifs seen across building most
+					quintessentially known to Dubai.
+				  </p>
+				  <p class="text-justify">
+					Floral patterned motifs on the cove,
+					chandelier and ceiling lend an air of
+					lushness. Minimalistic, yet culturally-relevant,
+					the space echoes a soothing
+					sensibility
+				  </p>
+			  </div>
+		  </div>
+		
+		</div>
+	  
+	  </div>
+	  <!------------------------------------      STAIR SECTION END    ------------------------------------>
+		
+	  
+	  
+
+	   
+	  <!------------------------------------      COUNTER SECTION      -------------------------------------->
+	  
+	  <div class="container-fluid inspiration-bg" style="background-image: url(./img/counter-resized.jpg);" >
+		<div class="gradient-overlay-div-r"></div>
+	  
+		<div class="row " >
+		 
+		  
+		  <div class=" col-lg-5 col-md-12 col-sm-12 " style="padding-bottom: 200px; ">
+			  <div class="card py-4 px-3 inspiration-card" >
+				<h4 class=" text-center ">Cash Counter</h4>
+				<center>
+				  <img src="./img/underline.png" class="img-fluid mb-2 pb-2 px-5" alt="">
+				</center>
+				<p class="text-justify">
+					Islamic geometric motifs synonymous
+					with historic structures across the city
+					adorn the main cash-back on the ground
+					floor, in the form of 3D relief lattice.
+					Elegantly perched upon this is tranquil
+					branding in Jade green marble.
+				  </p>
+				  <p class="text-justify">
+					The intricate lattice further extends to the
+					doors of storage spaces to lend a sense of
+					seamlessness and elegant functionality to
+					the space
+				  </p>
+			  </div>
+		  </div>
+
+
+		  <div class="col-lg-5 col-md-12 col-sm-12"></div>    
+		  <div class="col-lg-2 col-md-12 col-sm-12"></div>    
+		
+		</div>
+	  
+	  </div>
+	  <!------------------------------------      COUNTER SECTION END    ------------------------------------>
+		
+	  
+	  
+
+
+
+
+
+
+	  
+	  
+	  <!------------------------------------      WALL SECTION     -------------------------------------->
+	  <div class="container-fluid inspiration-bg" style="background-image: url(./img/wall-resized.jpg);">
+		<div class="gradient-overlay-div-l" ></div>
+	  
+		
+		<div class="row " >
+		  <div class="col-lg-5 col-md-12 col-sm-12"></div>    
+		  <div class="col-lg-2 col-md-12 col-sm-12"></div>    
+		 
+		  <div class=" col-lg-5 col-md-12 col-sm-12 " style=" padding-bottom: 200px;">
+			  <div class="card py-4 px-3 inspiration-card" >
+				 <h4 class=" text-center">First Floor <br>
+				  Wall Treatment</h4>
+				  <center>
+					<img src="./img/underline.png" class="img-fluid mb-1 pb-2 px-5" alt="">
+				  </center>
+				  <p class=" text-justify">Exquisitely glass cut motifs arch across
+					empty wall spaces on the first floor, while
+					visual wooden frames stand proud at the
+					bottom.</p>
+					<p class="text-justify">
+					The unique artistry is inspired by the
+					Bastakiya Quarters and market places in
+					Dubai, evoking a sense of surrealism and
+					gently transporting you to a distinctly
+					imaginative world.
+				  </p>
+			  </div>
+		  </div>
+		 
+		</div>
+	  
+	  </div>
+	  <!------------------------------------      WALL SECTION END    ------------------------------------>
+	  <div class="container-fluid" style="height:200px;"> </div>
+	  </section>
+	  
+
+
+	  <section style="position:relative; overflow-x:hidden;padding-top:100px;padding-bottom:100px; background:#000d1d; z-index:2;">
+		<div style="top:0;left:0;right:0;bottom:0;z-index:6;position:absolute;background:url(./img/footer-bg.png);background-size:35px;"></div>
+	  
+	  
+	  
+	  
+	  <div style="z-index:7;position:absolute;left:0;right:0;top:0;bottom:0;background:linear-gradient(
+		90deg,
+		
+		#916b3a8f 5%,
+		rgba(255, 255, 255, 0) 35%,
+		rgba(255, 255, 255, 0) 65%,
+		#916b3a8f 95%
+	  );"
+	  
+	  
+	  
+	  ></div>
+	  
+		<div class="container-fluid footer-div py-4 " style="position:relative;padding:0;margin:0;background-color: #000D1D;z-index:7;">
+		  
+		  <img class="d-lg-block d-md-block d-sm-none d-xs-none lefts"style="position:absolute; height:75%;width:auto;top:50%;transform:translateY(-50%)" src="./img/footer-left.png" class="px-2 img-fluid " alt="">
+		  <img class="d-lg-block d-md-block d-sm-none d-xs-none rights" style="position:absolute; height:75%;width:auto;right:5px;top:50%;transform:translateY(-50%)" src="./img/footer-right.png" class="px-2 img-fluid " alt="">
+	  
+		  <img style="position:absolute; height:auto;width:350px;" src="./img/star.svg" class="px-2 img-fluid  centerSet" alt="">
+		  <img style="position:absolute; height:auto;width:200px;" src="./img/logo white.png" class="px-2 img-fluid  centerSet" alt="">
+		  
+		  <div class="" style="height:3px;background-color:#A78242"></div>
+		  <div class="row" >
+			<div class="col-md-5  " style="position:relative;height:250px;  ">
+			 <h1 class=" text-center centerSet" style='color:white;' >We Invite <br> You To</h1>
+			</div>
+			<div class="col-md-2 " style="position:relative;height:250px; ">
+			  
+			</div>
+			<div class="col-md-5 " style="position:relative;height:250px; ">
+			  <div class="centerSet">
+				<h1 class="text-white text-center  " style="font-weight: 300;color:white;">Meena Bazaar</h1>
+			   
+			  </div>
+			  <button class="btn  bottomSet" style="padding:10px 15px; outline:none;bottom:30px;border-radius:40px;background:transparent;border:2px solid white; color:white;font-size: 13px;" onclick="location.href ='https://www.tanishq.ae/store-locator/find/Dubai/0;'">Locate Your Store 	&nbsp;
+				<span style="font-weight: bolder; font-size:17px;">&#8250;</span></button>
+			  
+			  
+			</div>
+		  
+		</div>
+	  
+		<div  style="height:3px;background-color:#A78242"></div>
+	  
+	  
+	  
+	  </div>
+	   </section>
+<!--------------------------------------------------- BODY CONTENT --------------------------------------------->
+
+
+
+<footer id="tqfooter">
+<!--
+<div ng-if="alerts.length > 0" ng-repeat="alert in alerts" class="alert alert-{{alert.type}} alert-dismissible" role="alert" ng-cloak>
+		<button type="button" class="close" ng-controller="alertOverlayCtrl" ng-click="closeAlertOverlay()"><span aria-hidden="true">&times;</span></button> {{ alert.msg }} </div>
+<div ng-if="alerts.length > 0" ng-controller="alertOverlayCtrl" class="alertOverlay" ng-click="closeAlertOverlay()" ng-cloak></div>
+-->
+	<div class="container no-padding" style="z-index:20;">
+		<div class="container no-padding">
+			<ul class="col-sm-6 col-md-7 col-lg-8 no-padding list-unstyled"  id="accordionFooter">
+				<li class="panel col-sm-6 no-padding">
+					<div class="panel-heading">
+						<a data-toggle="collapse" data-parent="#accordionFooter" href="javascript:;" data-target="#customer">Customer Service</a>
+						<span data-toggle="collapse" data-parent="#accordionFooter" href="#customer" class="collapse-icon pull-right visible-xs"></span>
+					</div>
+					<div id="customer" class="sub-menu panel-collapse collapse">
+						<div>
+							<ul class="list-unstyled">
+								<li><a href="/help-and-contactus" target="_blank">HELP & CONTACT</a></li>
+								<li><a href="/faq?category=order delivery and shipping" target="_blank">DELIVERY INFORMATION</a></li>
+								<li><a href="/faq?category=international shipping" target="_blank">INTERNATIONAL SHIPPING</a></li>
+								<li><a href="/faq?category=returns and exchanges" target="_blank">RETURNS</a></li>
+								<!--li><a href="/faq?category=warranty" target="_blank">WARRANTY INFORMATION</a></li-->
+								<li><a href="/faq?category=payment" target="_blank">PAYMENT OPTIONS</a></li>
+								<li><a href="/myaccount/order-history/guestOrder" target="_self">TRACK ORDER</a></li>
+								
+								<li><a href="/faq?category=encircle" target="_blank">ENCIRCLE PROGRAM</a></li>
+							</ul>
+						</div>
+					</div>
+				</li>
+				<li class="panel col-sm-6 no-padding">
+					<div class="panel-heading">
+						<a class="visible-xs" data-toggle="collapse" data-parent="#accordionFooter" href="javascript:;" data-target="#about">About Tanishq</a>
+						<span data-toggle="collapse" data-parent="#accordionFooter" href="#about" class="collapse-icon pull-right visible-xs"></span>
+						<a class="hidden-xs" href="#" target="new">About Tanishq</a>
+
+					</div>
+					<div id="about" class=" sub-menu panel-collapse collapse">
+						<div>
+							<ul class="list-unstyled">
+								<!--li><a href="/content/about-tanishq" target="_blank">ABOUT US</a></li-->
+								<!--li><a href="/content/catalogue" target="_blank">CATALOGUE</a></li-->
+								<!--li><a href="/content/media-room" target="_blank">MEDIA ROOM</a></li-->
+								<li><a href="https://careers.titan.co.in/Recruiting/candidates/candidates_home.aspx?rms=titan" target="_blank" title="">CAREERS</a></li>
+<li><a href="/store-locator" target="_blank">FIND A STORE</a></li>
+								<!--li><a href="/content/working-with-us" target="_blank">WORKING WITH US</a></li-->
+								<!--li><a href="/content/working-with-us" target="_blank">TITAN INFORMATION</a></li-->
+							</ul>
+						</div>
+					</div>
+				</li>
+			</ul>
+			<div class="col-sm-6 col-md-5 col-lg-4 right-content">
+				<div class="col-xs-12">
+					<div class="sign-up-section">
+						<p>Sign up to receive exclusive offers and news</p>
+<form name="subscriptionForm" ng-submit="newsletterSubscription();">
+						<div class="form-group">
+							<input name="subscribe" type="text" ng-model="subscriptionEmailId" maxlength="{{globalPropertiesList.EMAILADDRESS_MAX_LENGTH}}" ng-pattern="emailRegexp" class="form-control col-xs-8" placeholder="ENTER YOUR EMAIL ADDRESS">
+							<button type="submit" class="btn btn-primary">Subscribe</button>
+						</div>
+</form>
+					</div>
+					<div class="social">
+						<p class="social-link-header">Follow us on</p>
+						<span class="social-icon">
+							<a  href="javascript:var w=window.open('https://www.facebook.com/tanishq', '_blank','resizable=1,width=300,height=250');" title="facebook"><svg xmlns="http://www.w3.org/2000/svg" id="Layer_1" data-name="Layer 1" viewBox="0 0 150 150"><defs><style>.cls-1{fill:#ffffff;}</style></defs><title>Facebook</title><path id="facebook_icon" data-name="facebook icon" class="cls-1" d="M105.74,2v23.5S88.32,23.77,84,30.41C81.57,34,83,44.66,82.77,52.29h23.11c-2,8.92-3.35,15-4.79,22.69H82.64v73h-32V75.27H37v-23H50.47c.69-16.81,1-33.44,9.34-41.91C69.25.86,78.25,2,105.74,2"/></svg></a>
+						</span>
+						<span class="social-icon">
+							<a href="javascript:var w=window.open('https://twitter.com/TanishqJewelry', '_blank','resizable=1,width=300,height=250');" title="twitter"><svg xmlns="http://www.w3.org/2000/svg" id="Layer_1" data-name="Layer 1" viewBox="0 0 150 150"><defs><style>.cls-1{fill:#ffffff;}</style></defs><title>Twitter</title><path id="twitter_icon" data-name="twitter icon" class="cls-1" d="M100.41,19.06A30.68,30.68,0,0,1,124,28.4a48.43,48.43,0,0,0,15.29-5.14l3.71-2a29.78,29.78,0,0,1-9.68,14A14.17,14.17,0,0,1,130,37.52v.07c6.47-.07,11.81-3,16.88-4.56v.07A48.12,48.12,0,0,1,136.8,44.69l-4.65,3.69a85.11,85.11,0,0,1-1.38,19.12c-7.45,33.42-27.18,56.1-58.42,65.82-11.22,3.49-29.35,4.92-42.2,1.73a108.46,108.46,0,0,1-17.54-5.72A69.88,69.88,0,0,1,4.15,125l-2.62-1.59a49.26,49.26,0,0,0,9.52.36c2.93-.47,5.81-.35,8.51-.94a61.24,61.24,0,0,0,17.9-6.44,33.3,33.3,0,0,0,8.08-5.29,25.4,25.4,0,0,1-8.88-1.59,29.93,29.93,0,0,1-18.92-19c2.92.32,11.34,1.08,13.31-.58A21.84,21.84,0,0,1,21.31,86a28.64,28.64,0,0,1-14-25.49l3.06,1.45a32.76,32.76,0,0,0,6.27,1.75,9,9,0,0,0,4.08.36h-.15c-1.5-1.74-3.95-2.9-5.46-4.78a30.38,30.38,0,0,1-6.69-27,34.43,34.43,0,0,1,3.2-7.75l.15.07a18.28,18.28,0,0,0,2.69,3.12,54.74,54.74,0,0,0,8.88,8.47,87.87,87.87,0,0,0,36.45,17.6,57.19,57.19,0,0,0,13.39,1.74,27.65,27.65,0,0,1,.15-14,29.39,29.39,0,0,1,16.88-20,36,36,0,0,1,6.62-2l3.64-.44"/></svg></a>
+						</span>
+						<span class="social-icon">
+							<a href="javascript:var w=window.open('https://plus.google.com/112002947967528259073', '_blank','resizable=1,width=300,height=250');" title="google+"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 17.04 16.74"><defs><style>.cls-1{fill:#ffffff;}</style></defs><title>Google Plus</title><g id="Layer_2" data-name="Layer 2"><g id="Layer_1-2" data-name="Layer 1"><path class="cls-1" d="M.9,4.17a3.36,3.36,0,0,0,1.41,3,4,4,0,0,0,2.12.57H4.7a2.73,2.73,0,0,0,.56,1.9h0C4,9.68,0,9.93,0,13.22s3.67,3.51,4.41,3.51h.24a6.8,6.8,0,0,0,2.83-.61A3.8,3.8,0,0,0,9.7,12.43,4.52,4.52,0,0,0,7.73,9c-.51-.44-.94-.83-.94-1.2s.32-.67.72-1a3.68,3.68,0,0,0,1.27-3C8.78,2.41,8.6,1.48,7.5.89A3.92,3.92,0,0,1,8.22.76C8.82.68,9.7.58,9.7.09V0H5.33S.9.16.9,4.17ZM8,12.74C8,14.08,6.9,15.07,5.18,15.19s-3.18-.66-3.26-2a2.21,2.21,0,0,1,.79-1.77,3.62,3.62,0,0,1,2.17-.88h.29A2.52,2.52,0,0,1,8,12.74ZM6.82,3.26c.43,1.51-.22,3.09-1.25,3.38a1.35,1.35,0,0,1-.37.05c-.95,0-1.88-1-2.23-2.27a3.29,3.29,0,0,1,0-2A1.73,1.73,0,0,1,4.12,1.24a1.35,1.35,0,0,1,.37-.05C5.63,1.19,6.37,1.66,6.82,3.26Zm7.37,3.29V3.69H12.38V6.54H9.53V8.35h2.85V11.2h1.81V8.35H17V6.54Z"/></g></g></svg></a>
+						</span>
+						<span class="social-icon">
+							<a href="javascript:var w=window.open('https://www.instagram.com/tanishqjewellery/', '_blank' ,'resizable=1,width=300,height=250');" title="instagram"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16.5 16.4"><title>Instagram</title><defs><style>.cls-1{fill:#ffffff;}</style></defs><g id="Layer_2" data-name="Layer 2"><g id="Layer_1-2" data-name="Layer 1"><path class="cls-1" d="M13.1,8.2a4.9,4.9,0,0,1-9.8,0,3.75,3.75,0,0,1,.1-1H.1v6.6a2.58,2.58,0,0,0,2.6,2.6H13.9a2.58,2.58,0,0,0,2.6-2.6V7.2H13.2A3.75,3.75,0,0,0,13.1,8.2ZM13.8,0H2.6A2.58,2.58,0,0,0,0,2.6V5.4H4.1a4.88,4.88,0,0,1,4-2.1,4.75,4.75,0,0,1,4,2.1h4.1V2.6A2.36,2.36,0,0,0,13.8,0Zm1.3,3.2a.47.47,0,0,1-.5.5H13.2a.47.47,0,0,1-.5-.5V1.8a.47.47,0,0,1,.5-.5h1.4a.47.47,0,0,1,.5.5Zm-3.9,5a3,3,0,0,0-6,0,3.08,3.08,0,0,0,3,3A2.89,2.89,0,0,0,11.2,8.2Z"/></g></g></svg></a>
+						</span>							
+					</div>
+					<!--<div class="download-app-section">
+						<h3>Download the Titan app</h3>
+						<div class="row">
+							<div class="col-xs-5">
+
+								<a href="https://play.google.com/store/apps/details?id=com.isport.tanishq&amp;hl=en" title="" target="_blank"><img src="[Component name='tanishq_design_lib/img/footer/app-store' format='url']" alt="" class="img-responsive"></a>
+							</div>
+							<div class="col-xs-7 appmargin">
+								<a href="https://itunes.apple.com/in/app/tanishq-reflex/id1209937341?mt=8" title="" target="_blank"><img src="[Component name='tanishq_design_lib/img/footer/google-play' format='url']" alt="" class="img-responsive"></a>
+							</div>
+						</div>
+					</div> -->	
+					
+					<div class="row visible-xs">
+						<hr class="separator">
+					</div>
+				</div>
+			</div>
+			<div class="clearfix"></div>
+                        <div class="row hidden-xs">
+			    <hr class="separator">
+		        </div>
+			<div class="terms col-sm-12">
+				<div class="row">
+					<div class="col-xs-6 col-md-4 terms-conditions">
+						<a href="/content/terms-and-conditions" target="_blank">TERMS & CONDITIONS</a>
+					</div>
+					<div class="col-xs-6 col-md-4 privacy">
+						<a href="/content/privacy-policy" target="_blank">PRIVACY POLICY</a>
+					</div>
+
+					<!--div class="col-xs-6 col-md-4">
+						<a href="/content/cookie-policy" target="_blank">COOKIE POLICY</a>
+					</div-->
+                                        <div class="col-xs-12 col-md-4">
+                                            <div class="cpy_rights">© 2019 TANISHQ LTD. ALL RIGHTS RESERVED.</div>
+                                        </div>
+				</div>
+			</div>
+
+		</div>
+        <div class="container no-padding">
+            <ul class="payment-methods col-xs-12 col-sm-12 col-md-9">
+				<li class="col-xs-3 col-sm-1">
+				<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 35.44 10.89"><defs><style>.cls-1{fill:#fff;}</style></defs><title>VISA</title><g id="Layer_2" data-name="Layer 2"><g id="Layer_1-2" data-name="Layer 1"><polygon class="cls-1" points="12.48 10.73 14.28 0.2 17.16 0.2 15.37 10.73 12.48 10.73"/><path class="cls-1" d="M25.78.44A7.18,7.18,0,0,0,23.19,0c-2.84,0-4.84,1.43-4.84,3.47,0,1.51,1.43,2.36,2.52,2.86s1.49.85,1.49,1.31c0,.71-.89,1-1.71,1A6.17,6.17,0,0,1,18,8.13L17.59,8l-.4,2.36a9.06,9.06,0,0,0,3.21.56c3,0,5-1.41,5-3.59,0-1.19-.75-2.12-2.4-2.86-1-.48-1.61-.81-1.61-1.31s.52-.91,1.63-.91a5,5,0,0,1,2.14.4l.26.12.36-2.3"/><path class="cls-1" d="M33.14.2H30.92a1.44,1.44,0,0,0-1.51.87l-4.26,9.64h3s.48-1.29.61-1.57h3.67l.34,1.57h2.66L33.14.2M29.59,7c.24-.61,1.15-2.94,1.15-2.94s.24-.61.38-1l.2.91s.54,2.52.67,3Z"/><path class="cls-1" d="M10.08.2,7.28,7.38,7,5.93A8.19,8.19,0,0,0,3,1.51l2.56,9.22h3L13.13.2h-3"/><path class="cls-1" d="M4.68.2H0L0,.42c3.61.87,6,3,7,5.51L6,1.09A1.2,1.2,0,0,0,4.68.2"/></g></g></svg>
+				</li>
+				<li class="col-xs-3 col-sm-1">
+					<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="xMidYMid" width="72" height="43" viewBox="0 0 72 43">
+  <image xlink:href="data:img/png;base64,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" x="-2" y="-1" width="76" height="43"/>
+</svg>
+				</li>
+				<li class="col-xs-3 col-sm-1">
+				<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 49.5 13.19"><defs><style>.cls-1{fill:#fff;}</style></defs><title>PayPal</title><g class="cls-1" id="Layer_2" data-name="Layer 2"><g class="cls-1" id="Layer_1-2" data-name="Layer 1"><path class="cls-1" d="M33.4,0H29.55A.53.53,0,0,0,29,.45l-1.56,9.87a.32.32,0,0,0,.32.37h2a.37.37,0,0,0,.37-.32l.44-2.8a.53.53,0,0,1,.53-.45h1.22c2.54,0,4-1.23,4.38-3.66A3,3,0,0,0,36.21,1,3.57,3.57,0,0,0,33.4,0Zm.44,3.61C33.63,5,32.58,5,31.56,5H31l.41-2.58a.32.32,0,0,1,.32-.27H32c.69,0,1.35,0,1.69.4A1.28,1.28,0,0,1,33.84,3.61Z"/><path class="cls-1" d="M5.94,0H2.09a.53.53,0,0,0-.53.45L0,10.32a.32.32,0,0,0,.32.37H2.16a.53.53,0,0,0,.53-.45l.42-2.66a.53.53,0,0,1,.53-.45H4.85c2.54,0,4-1.23,4.38-3.66A3,3,0,0,0,8.75,1,3.57,3.57,0,0,0,5.94,0Zm.44,3.61C6.17,5,5.12,5,4.1,5H3.52l.41-2.58a.32.32,0,0,1,.32-.27h.27c.69,0,1.35,0,1.69.4A1.28,1.28,0,0,1,6.38,3.61Z"/><path class="cls-1" d="M17.45,3.56H15.6a.32.32,0,0,0-.32.27l-.08.52-.13-.19a2.62,2.62,0,0,0-2.18-.77A4.24,4.24,0,0,0,8.78,7.1a3.48,3.48,0,0,0,.69,2.83,2.89,2.89,0,0,0,2.32.94,3.53,3.53,0,0,0,2.55-1.05l-.08.51a.32.32,0,0,0,.32.37h1.66a.53.53,0,0,0,.53-.45l1-6.31A.32.32,0,0,0,17.45,3.56ZM14.88,7.15A2.06,2.06,0,0,1,12.8,8.91a1.56,1.56,0,0,1-1.24-.5,1.57,1.57,0,0,1-.29-1.29,2.06,2.06,0,0,1,2.07-1.77,1.55,1.55,0,0,1,1.23.5A1.59,1.59,0,0,1,14.88,7.15Z"/><path class="cls-1" d="M44.91,3.56H43.06a.32.32,0,0,0-.32.27l-.08.52-.13-.19a2.62,2.62,0,0,0-2.18-.77A4.24,4.24,0,0,0,36.24,7.1a3.48,3.48,0,0,0,.69,2.83,2.89,2.89,0,0,0,2.32.94A3.53,3.53,0,0,0,41.8,9.81l-.08.51a.32.32,0,0,0,.32.37H43.7a.53.53,0,0,0,.53-.45l1-6.31A.32.32,0,0,0,44.91,3.56ZM42.34,7.15a2.06,2.06,0,0,1-2.08,1.76A1.56,1.56,0,0,1,39,8.41a1.57,1.57,0,0,1-.29-1.29A2.06,2.06,0,0,1,40.8,5.34a1.55,1.55,0,0,1,1.23.5A1.59,1.59,0,0,1,42.34,7.15Z"/><path class="cls-1" d="M27.27,3.56H25.41A.54.54,0,0,0,25,3.8L22.41,7.56,21.33,3.94a.54.54,0,0,0-.51-.38H19a.32.32,0,0,0-.3.42l2,6-1.92,2.71a.32.32,0,0,0,.26.51h1.85a.53.53,0,0,0,.44-.23l6.16-8.89A.32.32,0,0,0,27.27,3.56Z"/><path class="cls-1" d="M47.08.27,45.5,10.32a.32.32,0,0,0,.32.37h1.59a.53.53,0,0,0,.53-.45L49.49.37A.32.32,0,0,0,49.18,0H47.4A.32.32,0,0,0,47.08.27Z"/></g></g></svg>
+				</li>
+				<li class="col-xs-3 col-sm-1">
+					<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="xMidYMid" width="66" height="41" viewBox="0 0 66 41">
+  <image xlink:href="data:img/png;base64,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" width="66" height="41"/>
+</svg>
+				</li>
+				<li class="col-xs-3 col-sm-1">
+					<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 59.05 15.4"><defs><style>.cls-1{fill:#fff;}</style></defs><title>Rupay</title><g id="Layer_2" class="cls-1" data-name="Layer 2"><g class="cls-1" id="Layer_1-2" data-name="Layer 1"><path class="cls-1" d="M33.29,3.12C33.57.92,31.89,0,29.79,0H24.29L21,11.84h3.5l1-3.65,2.79,0S32.62,8.39,33.29,3.12ZM29.69,4.3A1.65,1.65,0,0,1,28,5.42H26.27l.68-2.52h1.8A1,1,0,0,1,29.69,4.3Z"/><path class="cls-1" d="M13.3,3.24h3.19L15.18,8.29s-.33,1.13.73,1.21c.83.07,1.45-.93,1.66-1.6.27-.88,1.3-4.67,1.3-4.67h3.29l-2.5,8.61H16.78l.35-1.23a4.56,4.56,0,0,1-3.64,1.57c-1.93-.19-2.1-1.59-1.77-3.34C11.89,8,13.3,3.24,13.3,3.24Z"/><path class="cls-1" d="M41,7.6c.42-1.43,1-2.79.52-3.54C40.92,2.91,39.73,2.81,38,2.81c-1.91,0-4.28.36-5,2.91h3.19a1.4,1.4,0,0,1,1.49-.9c1.06.05,1,.78.61,1.18-.68.71-2.57.31-4.67,1a3.54,3.54,0,0,0-2.07,4c.38.93,1.1,1,2.07,1.14A4.36,4.36,0,0,0,36.87,11c0,.56,0,.88,0,.88h3.35v-.32s-.3-.08-.27-.5S40.57,9.24,41,7.6Zm-4.82,2.49c-.55.14-1.21.21-1.34-.28C34.53,8.45,37.71,8,37.71,8A2.2,2.2,0,0,1,36.23,10.09Z"/><path class="cls-1" d="M12.51,2.76C12.79.56,10.85,0,8.75,0H3.25L0,11.84H3.5l1.09-4,2,0s.81,0,.83.71-.6,2.3-.56,3.29h3.59v-.32s-.3-.08-.27-.5a12.48,12.48,0,0,1,.46-1.47A4.54,4.54,0,0,0,11,7.82c0-.79-.52-1.16-1.24-1.42C12,5.87,12.51,2.76,12.51,2.76ZM8.8,4.27c-.45,1-1.85.93-1.85.93H5.31L5.91,3H8.08C8.85,3,9.09,3.59,8.8,4.27Z"/><path class="cls-1" d="M42.57,3.24h3.25V8.4l2.81-5.16h3l-6,10.44A5.29,5.29,0,0,1,44.35,15a2.85,2.85,0,0,1-1.48.38H40.24l.69-2.49h1.12a1.23,1.23,0,0,0,.71-.3,1.24,1.24,0,0,0,.28-.83C43,11.22,42.57,3.24,42.57,3.24Z"/><polygon class="cls-1" points="55.78 1.25 52.03 14.3 59.05 7.78 55.78 1.25"/><polygon class="cls-1" points="53.37 1.25 49.62 14.3 56.65 7.78 53.37 1.25"/></g></g></svg>
+				</li>
+				<li class="col-xs-3 col-sm-1">
+				<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 87.81 20.83"><defs><style>.cls-1{fill:#fff}</style></defs><title>Axis Bank</title><g id="Layer_2" data-name="Layer 2"><g class="cls-1" id="Layer_1-2" data-name="Layer 1"><polygon class="cls-1" points="81.11 13.98 81.11 6.46 82.53 6.46 82.53 9.57 85.67 6.46 87.4 6.46 83.94 9.8 87.81 13.98 85.98 13.98 82.53 10.14 82.53 13.98 81.11 13.98 81.11 13.98"/><path class="cls-1" d="M72.28,14V6.16l5.54,4.6.46.42q.23.22.49.5V6.46h1.31v7.81L74.42,9.59c-.15-.13-.3-.26-.44-.4a5.88,5.88,0,0,1-.4-.44V14Z"/><path class="cls-1" d="M70.07,14l-1-1.94H65.63l-1,1.94H63.12l4.23-7.82L71.57,14Zm-3.92-3h2.43l-.89-1.71c-.05-.11-.11-.24-.16-.38s-.11-.3-.17-.48c0,.16-.1.32-.15.46s-.11.27-.16.39L66.15,11Z"/><path class="cls-1" d="M57.57,14V6.46h2.2a8,8,0,0,1,1.39.09,2.19,2.19,0,0,1,.76.29,1.79,1.79,0,0,1,.63.67,1.92,1.92,0,0,1,.22.92,1.56,1.56,0,0,1-.32,1,1.71,1.71,0,0,1-.94.56,1.88,1.88,0,0,1,1.2.6,1.82,1.82,0,0,1,.44,1.25,2.07,2.07,0,0,1-.19.87,1.91,1.91,0,0,1-.52.7,2.05,2.05,0,0,1-.89.44,8.54,8.54,0,0,1-1.78.13ZM59,13h.49a9,9,0,0,0,1.11-.05,1.58,1.58,0,0,0,.58-.18,1.05,1.05,0,0,0,.4-.4,1.1,1.1,0,0,0,.14-.56,1.12,1.12,0,0,0-.17-.63,1.14,1.14,0,0,0-.49-.42,1.88,1.88,0,0,0-.46-.13,4.75,4.75,0,0,0-.69,0H59V13Zm0-3.32h.54a3.11,3.11,0,0,0,1.43-.24.85.85,0,0,0,.42-.8A1,1,0,0,0,61,7.73a3,3,0,0,0-1.47-.25H59V9.63Z"/><path class="cls-1" d="M46.88,12.47,48,12a1.35,1.35,0,0,0,.57.77,1.91,1.91,0,0,0,1.05.26,1.44,1.44,0,0,0,1-.3,1,1,0,0,0,.36-.81q0-.66-1.22-1.18l-.26-.11a6,6,0,0,1-1.84-1.1,1.69,1.69,0,0,1-.46-1.2,1.84,1.84,0,0,1,.69-1.49,2.77,2.77,0,0,1,1.82-.57,3.36,3.36,0,0,1,1.55.32,1.75,1.75,0,0,1,.86.92L51,8a1.66,1.66,0,0,0-.55-.52,1.4,1.4,0,0,0-.69-.16,1.36,1.36,0,0,0-.87.26.83.83,0,0,0-.32.69Q48.54,9,50,9.55l.17.07a5.17,5.17,0,0,1,1.71,1,1.72,1.72,0,0,1,.46,1.23,2.1,2.1,0,0,1-.75,1.7,3,3,0,0,1-2,.63,3.17,3.17,0,0,1-1.75-.44,2.06,2.06,0,0,1-.89-1.26Z"/><polygon class="cls-1" points="44.38 13.98 44.38 6.46 45.74 6.46 45.74 13.98 44.38 13.98 44.38 13.98"/><path class="cls-1" d="M36.23,14,38.94,10l-2.4-3.59H38L39.18,8.3c.07.09.19.29.36.6l.09.15.2-.34.25-.39,1.27-1.85h1.39L40.3,10l2.64,4h-1.5L40,11.85l0,0-.42-.72-.21.36-.25.38L37.67,14Z"/><path d="M34.49,14l-1-1.94H30.22l-1,1.94H27.82l4.05-7.82,4,7.82Zm-3.76-3h2.33L32.2,9.31c0-.11-.1-.24-.15-.38s-.11-.3-.16-.48c0,.16-.09.32-.15.46s-.1.27-.16.39L30.72,11Z"/><polygon class="cls-1" points="0 20.83 12.19 0 15.95 6.3 7.82 20.73 0 20.83 0 20.83"/><polygon class="cls-1" points="12.29 12.9 19.81 12.8 24.39 20.73 16.66 20.73 12.29 12.9 12.29 12.9"/></g></g></svg>
+				</li>
+				<li class="col-xs-3 col-sm-1">
+						<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="xMidYMid" width="83" height="16" viewBox="0 0 83 16">
+  <image xlink:href="data:img/png;base64,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" x="2" width="80" height="16"/>
+</svg>
+	</li>
+				<li class="col-xs-3 col-sm-1">
+									<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="xMidYMid" width="47" height="33" viewBox="0 0 47 33">
+  <image xlink:href="data:img/png;base64,iVBORw0KGgoAAAANSUhEUgAAAC8AAAAhCAMAAAB+8wLuAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAACkVBMVEUAAAD///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////8AAABErC2vAAAA2XRSTlMACDKBqrG1wdfq6dm+jD8KV6KCbmx4m9774GYFA5JgKAYhXtj2sCmdIrbTLXoPBAIMIMgVJtUXpYeKRuaOkYkBEHWYlAem/twlxTdocJPyW/hvJLsUwN9AryMTrUHlxBGjnDpi70/094uQC6CZiKscHdASlWd/fk1pxsm3CbgwvxsxDivk7Z8WQ6x3cvXaGBk7eYSDdjUsPDlERWVzSThcfIAaqU5La21xzV1HUlMvmj0Np3SuWYXDWkoql2RfVH2hSDN7j2FjpDQuWFCe0spVsky5Hx42llZq3X5dfAAAAAFiS0dEAIgFHUgAAAAJcEhZcwAACxIAAAsSAdLdfvwAAAPoSURBVDjLhZT7Q1J3FMAPaGibig90BQjolqOQR4MpGnLBx2aZtdSmGRuKczNyk6mIa+UEN0TZxAehJmoSoVnOVzZ1FZjSMre193b/m30vW/ywuu77y/me7/2cx/ec870A/1kUakTkHlpU9N4XXoyJjaPD/634yITEJEZyyks4vm8/jcnanWanxnC4PGKTlv4yjuOvHMjYFX91Dz+scA8iA/yQYBc+M0oIIKKIASRIOxxFGLwmJcVlr6PoWdlJAGJ5DgUg9whhoCDl85QYqCJxNQCWjxcUAhS9gfg3i0lw0dFjwC7B8eOIL8VPxAOcPIH4t06R8GXlFSA9/ZTHi9hQ/DaRUAoJX1klhDNHwvzRalBFE/xZEl5zQAj8d8L8u9p/+SoS/kyMFCrKw3yNGLj7Cb6W9L46ENfh+KkQ/149AOd9hH/AIKtnwzkA/flQPRvxD9HofES4j24i4w0fUwGaW1pRv4xtPADTXoTvM5LPQ/snFUReGACPaPcFwv2nF8l5UF7ihvcdnxH46c6QgmHPN2iLajdbkNR3MT5H9BfW7n/OMbIItoSehl67MRv14cuveuqf+d5XYZA50OR3Nj896WcOJA4qh5yM+MsAGa5ObHiE8M4aDb2EykbjlTE3hT2W+5xgHc7xifTJq+eIvd5qJ8ThS1MS/qAVPNXP4q5rXj27+LpPGepmzjQhsrJnAPg3ZvvLXDdv9Tbzrs/1fa1xUjWTKLpinigre0y5kLHoLctsKOGwwbO0LAbV7VTFSknVRMrxk+nuO3eWnMbETh1AT0QoDDPZ7WbVzvY2jHyTBI4iOwZZ5Uzn6pp80ZdXs6bhzvTq1y8Y0f2/PU8hStk+c9cOQ/fU01AyD57bAyz9fZo2drZeIbSXXlugFKr9dMv62QBA3KENHkgfTKtbNylbQb8TJtVgowU03iGu0Nr+MN/gVzJoq+ZMRZNt3DSFXAdrTBl1D5P89d+ZrO6hVD6nC1zUiQkXqhZVlkFVuVyi0ZsWWX83ffRRKHXPhq6Lss2lDx/jy5pGHqEceSz0j1zsaypUdfOkPJEKKQAWNMsXDUKPgw4iAxsNA0ZcBCgiLTDdpsYsQatJ7dvIuWJemR5bX3bD46zLEQ7O1dWdze2giVlZYObv8Nr6m5eHNTDVMvJ9QDDel9defdAp8AVyBPd/uPVYwvwxTReI286vnVNl5hdU7cQ1L21ZCrx94Jabm9rKzdjgE1h6og3S5iVptp9SpMkJdZ7SdYec9jMEi9Lu3VjTOX/51Y9mZnOLo9HG5kpSV/RFO6bNxAHn3G+/K1YWxv/oqH3Q1eKV5979c47tL/nLkGqP8Nn+Bhp4bdR06WpZAAAAAElFTkSuQmCC" width="47" height="33"/>
+</svg>
+				</li>
+				<li class="col-xs-3 col-sm-1">
+			<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 44.58 42.18"><defs><style>.cls-1{fill-rule:evenodd;}</style></defs><title>American Express</title><g id="Layer_2" data-name="Layer 2"><g id="Layer_1-2" data-name="Layer 1"><path class="cls-1" d="M1.11,41.76H1c0-.07,0-.18,0-.2s0-.11-.11-.11H.62v.31H.53V41H.84c.13,0,.24,0,.24.16a.22.22,0,0,1-.07.18.19.19,0,0,1,.07.15v.13s0,0,0,0ZM1,41.23c0-.09-.05-.09-.09-.09H.62v.2H.84c.07,0,.13,0,.13-.11m.6.15a.78.78,0,0,0-.8-.77.77.77,0,0,0-.77.77.79.79,0,1,0,1.57,0m-.11,0A.66.66,0,0,1,.77,42a.63.63,0,0,1-.66-.66.66.66,0,0,1,.66-.66.69.69,0,0,1,.69.66"/><path class="cls-1" d="M44.58,27.21c0,1-.68,1.54-1.86,1.54H40.45v-1h2.26a.69.69,0,0,0,.46-.11.46.46,0,0,0,.15-.31.48.48,0,0,0-.15-.35.58.58,0,0,0-.42-.11c-1.08,0-2.45,0-2.45-1.52A1.48,1.48,0,0,1,42,23.85h2.34v1H42.17a.76.76,0,0,0-.46.07.52.52,0,0,0-.18.38.36.36,0,0,0,.24.35,1.85,1.85,0,0,0,.46.07h.64a2.08,2.08,0,0,1,1.37.38,1.6,1.6,0,0,1,.35,1.06m-4.93-1.06a2.08,2.08,0,0,0-1.37-.38h-.64a1.83,1.83,0,0,1-.46-.07.36.36,0,0,1-.24-.35.42.42,0,0,1,.18-.38.76.76,0,0,1,.46-.07h2.16v-1H37.4c-1.26,0-1.68.77-1.68,1.46,0,1.56,1.37,1.48,2.45,1.52a.58.58,0,0,1,.42.11.48.48,0,0,1,.15.35.46.46,0,0,1-.15.31.77.77,0,0,1-.46.11H35.87v1h2.26c1.19,0,1.86-.49,1.86-1.54a1.61,1.61,0,0,0-.35-1.06m-4.49,1.59H32.4v-1h2.7v-1H32.4v-.9h2.76v-1H31.25v4.9h3.91ZM30,24.08a3.06,3.06,0,0,0-1.44-.24H25.86v4.9H27V27h1.26c.42,0,.66,0,.84.22a1.62,1.62,0,0,1,.2,1v.59h1.17v-1a1.53,1.53,0,0,0-.18-.9,1.21,1.21,0,0,0-.6-.42,1.34,1.34,0,0,0,.84-1.3,1.12,1.12,0,0,0-.58-1.1m-6.65-.24H19.6l-1.52,1.61-1.42-1.61H11.93v4.9h4.66l1.5-1.61,1.44,1.61h2.26V27.1h1.48c1,0,2-.27,2-1.65s-1-1.61-2-1.61m5.7,2a1.41,1.41,0,0,1-.57.07L27,26V24.87h1.42A1.09,1.09,0,0,1,29,25a.44.44,0,0,1,.24.42.59.59,0,0,1-.24.49m-5.7.24H21.79V24.87h1.55c.42,0,.69.16.69.59a.62.62,0,0,1-.69.66m-4.51.18,1.81-1.92v4ZM16,27.74h-2.9v-1h2.59v-1H13.08v-.9H16l1.3,1.43ZM41.33,20.3H39.65l-2.21-3.68V20.3H35.06l-.46-1.08H32.16L31.7,20.3H30.33a2.52,2.52,0,0,1-1.72-.55,2.6,2.6,0,0,1-.6-1.87A2.6,2.6,0,0,1,28.65,16a2.39,2.39,0,0,1,1.79-.57h1.11v1.06H30.44a1.27,1.27,0,0,0-.91.27,1.57,1.57,0,0,0-.31,1.12A1.76,1.76,0,0,0,29.53,19a1.21,1.21,0,0,0,.8.24h.53l1.68-3.86h1.73l2,4.63V15.39h1.81l2.06,3.4v-3.4h1.21Zm-13.9-4.9H26.24v4.9h1.19Zm-2.48.22a2.71,2.71,0,0,0-1.41-.22H20.86v4.9H22V18.52h1.26a1.27,1.27,0,0,1,.88.2,1.58,1.58,0,0,1,.16,1v.62h1.2v-1a1.26,1.26,0,0,0-.22-.88,1.43,1.43,0,0,0-.57-.42,1.39,1.39,0,0,0,.84-1.3,1.19,1.19,0,0,0-.62-1.12M20,19.29H17.28v-1H20v-1h-2.7v-.88H20v-1H16.09v4.9H20Zm-4.8-3.9H13.3l-1.44,3.33-1.53-3.33H8.44V20l-2-4.63H4.69l-2.1,4.9H3.85l.44-1.08H6.76L7.2,20.3H9.59V16.45L11.3,20.3h1L14,16.45V20.3h1.19Zm19,2.78-.8-1.94-.8,1.94ZM24,17.39a1,1,0,0,1-.58.11H22V16.42h1.44a1.47,1.47,0,0,1,.58.07.49.49,0,0,1,.22.46.44.44,0,0,1-.22.44m-19.32.79.82-1.94.8,1.94ZM44.29,0H2.56V17.68L4,14.42H7l.42.81v-.81H11l.8,1.74.78-1.74H24a2,2,0,0,1,1.33.38v-.38h3.12v.38a4,4,0,0,1,2-.38h4.51l.42.81v-.81h3.32l.49.81v-.81h3.25v6.86H39.08l-.64-1v1H34.35l-.46-1.12h-1l-.46,1.12H30.3a4,4,0,0,1-1.88-.42v.42H23.34V19.71c0-.22,0-.26-.18-.26H23v1.83H13.19V20.4l-.35.88H10.77l-.35-.84v.84h-4L6,20.17H5l-.46,1.12h-2V42H44.29V29.43a4.33,4.33,0,0,1-1.7.31h-3v-.42a2.75,2.75,0,0,1-1.57.42H28.38V28.16c0-.22,0-.22-.22-.22H28v1.79H24.84V27.87a3.7,3.7,0,0,1-1.64.26h-.35v1.61H19l-.91-1.06-1,1.06H10.88V22.86h6.3l.9,1.06,1-1.06H23.3a2.64,2.64,0,0,1,1.64.42v-.42h3.78a3,3,0,0,1,1.61.42v-.42H36v.42a2.41,2.41,0,0,1,1.44-.42h3.18v.42a2.59,2.59,0,0,1,1.48-.42h2.15Z"/></g></g></svg>
+				</li>
+				
+			</ul>
+    </div>
+</div>
+</footer>
+    <script src="js/jquery.min.js"></script>
+	<script src="./js/swiper-bundle.min.js"></script>
+    <script src="lib/angular.js"></script>
+    <script src="lib/angular-ui-router.js"></script>
+    <script src="lib/ui-bootstrap-tpls-2.5.0.min.js"></script>
+    <script src="lib/carousel-slick.min.js"></script>
+    <script src="lib/carousel-angular-slick.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/homepage.js"></script>
+    <script src="js/header.js"></script>
+	<script src="js/scrollReveal.js"></script>
+	
+	<script src="js/slider.js"></script>
+	<script type="text/javascript">
+		$(function () {
+		$(window).scroll(function(){
+		var scroll = $(window).scrollTop();
+		if (scroll >= 2000) {
+		$('.invi').hide()
+		}
+		else{
+		$('.invi').show();
+		}
+		});
+		})
+		</script>
+</body>
+
+</html>
