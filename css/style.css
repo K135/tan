@@ -231,7 +231,6 @@ body {
     background-image: url(../img/slider-small.png);
     background-position: center;
     background-size: cover;
-
   }
   .vidFirst {
     transform: translateY(100px);
@@ -423,9 +422,6 @@ a#next {
   }
 }
 
-
-
-
 .swiper-container {
   width: 100%;
   height: 100%;
@@ -450,5 +446,3 @@ a#next {
   -webkit-align-items: center;
   align-items: center;
 }
-
-
