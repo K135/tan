@@ -240,7 +240,7 @@ body {
     transform: translateY(50px);
   }
   .firstlogo {
-    padding-top: 100px;
+    margin-top: 50px;
   }
 }
 
@@ -255,33 +255,24 @@ body {
   }
 }
 
-
-@media only screen and (max-width: 1200px) {
-  
-  
-
-}
-
 @media only screen and (max-width: 1076px) {
   .hero-section .pend img {
     position: absolute;
   }
 }
 
-
-
 @media only screen and (max-width: 1200px) {
   .inspiration-bg {
     margin-top: 400px;
     height: 400px;
     background-attachment: scroll;
-   background-size: 120%;
+    background-size: 120%;
   }
 
   .inspiration-card {
     margin-top: -300px;
   }
-  
+
   #mb-cont {
     text-align: justify;
   }
@@ -290,7 +281,7 @@ body {
     margin-top: 300px;
   }
   .videoYT2 {
-    margin-bottom: 200px;
+    margin-bottom: 100px;
     background-color: black;
   }
 
@@ -325,14 +316,7 @@ body {
   }
 }
 
-#carousel123 {
-  width: 100%;
-  height: auto;
-  margin: 0 auto;
-  display: flex;
-  justify-content: center;
-  padding-top: 15;
-}
+
 
 @media (max-width: 1440px) {
   #carousel123 {
