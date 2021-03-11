@@ -1291,15 +1291,19 @@ class="panel">
 		else{
 		$('.invi').show();
 		}
-		if(scroll >= 560 && $('.invi').css('position','fixed')){
+
+		if( $(window).width()>768){
+		if(scroll >= 560){
 			$('.invi').css('position','absolute');
 			$('.invi').css('top','389px');
 		}
-		else{
+		else {
+			
 			$('.invi').css('position','fixed');
 			$('.invi').css('top','0');
 			
 		}
+	  }
 
 		});
 		})
