@@ -1,15 +1,11 @@
-
-
-
-
 .centerSet {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
 }
-#loc{
-  animation:moveHor 0.3s linear infinite alternate
+#loc {
+  animation: moveHor 0.3s linear infinite alternate;
 }
 .bottomSet {
   position: absolute;
@@ -34,14 +30,13 @@ body {
   overflow-x: hidden;
   background-attachment: fixed;
   background-repeat: repeat;
-
 }
 
 .slider-section {
   position: relative;
   background: url(./../img/slider-bg.png);
   background-repeat: no-repeat;
-  margin-left:-2px;
+  margin-left: -2px;
   background-position: left;
   background-size: cover;
 }
@@ -167,8 +162,6 @@ body {
 
 /* --------------------------------------Youtube VIDEO IFRAME------------------------*/
 .videoWrapper {
-  
-
   transition-duration: 0.4s;
   border-top: 70px;
   opacity: 1;
@@ -193,18 +186,23 @@ body {
   animation-duration: 4s;
   animation-iteration-count: infinite;
   animation-timing-function: ease-in-out;
- 
+}
+
+
+#loremTop{
+  position:absolute;top:40%;left:50%;transform:translateX(-50%);
+  height
 }
 
 @keyframes floatOBJECT {
   from {
-    transform: translateY( 0px);
+    transform: translateY(0px);
   }
   65% {
-    transform: translateY( 12px);
+    transform: translateY(12px);
   }
   to {
-    transform: translateY( -0px);
+    transform: translateY(-0px);
   }
 }
 
@@ -212,12 +210,11 @@ body {
   from {
     transform: translateX(0px);
   }
-  
+
   to {
     transform: translateX(2px);
   }
 }
-
 
 .floatOBJECTREV {
   animation-name: floatOBJECTREV;
@@ -261,20 +258,24 @@ body {
   .firstlogo {
     margin-top: 50px;
   }
+  #loremTop{
+    top:55%;
+  }
 }
 
 @media only screen and (max-width: 886px) {
   .secvidss {
     margin-top: -40px;
-    z-index:-1;
-    
+    z-index: -1;
   }
 }
-
 
 @media only screen and (max-width: 768px) {
   .hero-section .pend img {
     position: absolute;
+  }
+  #lorem{
+    font-size:40px;
   }
 }
 @media only screen and (min-width: 150px) {
@@ -295,7 +296,29 @@ body {
     height: 400px;
     background-attachment: scroll;
     background-size: 120%;
-    background-size:cover;
+    background-size: cover;
+  }
+
+  @media only screen and (max-width:568px){
+    #lorem{
+      font-size:30px;
+    }
+    #loremTop{top:40%;}
+  }
+
+  @media only screen and (max-width:445px){
+    #lorem{
+      font-size:25px;
+    }
+    #loremTop{top:38%;}
+  }
+
+
+  @media only screen and (max-width:435px){
+    #lorem{
+      font-size:15px;
+    }
+    #loremTop{top:25%;}
   }
 
   .inspiration-card {
@@ -310,7 +333,7 @@ body {
     margin-top: 300px;
   }
   .videoYT2 {
-    margin-bottom:100px;
+    margin-bottom: 60px;
     background-color: black;
   }
 
@@ -393,7 +416,6 @@ body {
   font-family: sans-serif;
   font-size: 20px;
 }
-
 
 /* Styling for prev and next buttons */
 #buttons {
