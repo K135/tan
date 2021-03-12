@@ -188,10 +188,11 @@ body {
   animation-timing-function: ease-in-out;
 }
 
-
-#loremTop{
-  position:absolute;top:40%;left:50%;transform:translateX(-50%);
-  height
+#loremTop {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
 @keyframes floatOBJECT {
@@ -258,8 +259,8 @@ body {
   .firstlogo {
     margin-top: 50px;
   }
-  #loremTop{
-    top:55%;
+  #loremTop {
+    top: 55%;
   }
 }
 
@@ -274,8 +275,8 @@ body {
   .hero-section .pend img {
     position: absolute;
   }
-  #lorem{
-    font-size:40px;
+  #lorem {
+    font-size: 40px;
   }
 }
 @media only screen and (min-width: 150px) {
@@ -299,26 +300,32 @@ body {
     background-size: cover;
   }
 
-  @media only screen and (max-width:568px){
-    #lorem{
-      font-size:30px;
+  @media only screen and (max-width: 568px) {
+    #lorem {
+      font-size: 30px;
     }
-    #loremTop{top:40%;}
+    #loremTop {
+      top: 40%;
+    }
   }
 
-  @media only screen and (max-width:445px){
-    #lorem{
-      font-size:25px;
+  @media only screen and (max-width: 445px) {
+    #lorem {
+      font-size: 25px;
     }
-    #loremTop{top:38%;}
+    #loremTop {
+      top: 38%;
+    }
   }
 
-
-  @media only screen and (max-width:435px){
-    #lorem{
-      font-size:15px;
+  @media only screen and (max-width: 435px) {
+    #lorem {
+      margin-top: 50px;
+      font-size: 15px;
     }
-    #loremTop{top:25%;}
+    #loremTop {
+      top: 25%;
+    }
   }
 
   .inspiration-card {
