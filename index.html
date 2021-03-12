@@ -733,7 +733,7 @@ class="panel">
 				  </video> -->
 				  <div class="YTframe videoYT2 vidFirst pb-1 px-1 rounded"  >
 					<div class="videoWrapper">
-					  <iframe width="800" height="450" src="https://www.youtube.com/watch?v=d8GFHuRCrgY" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+					  <iframe width="800" height="450" src="https://www.youtube.com/embed/d8GFHuRCrgY" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 					</div>
 				  </div>
 	  
@@ -746,7 +746,7 @@ class="panel">
 
    </section>
 
-
+   
 
 <section  class=" slider-section" style="z-index:2;">
 		
@@ -1323,8 +1323,8 @@ class="panel">
 	  
 	  function wheel(event) {
 		  var delta = 0;
-		  if (event.wheelDelta) delta = event.wheelDelta / 40; //controls the scroll wheel range/speed
-		  else if (event.detail) delta = -event.detail / 40;
+		  if (event.wheelDelta) delta = event.wheelDelta / 50; //controls the scroll wheel range/speed
+		  else if (event.detail) delta = -event.detail / 50;
 	  
 		  handle(delta);
 		  if (event.preventDefault) event.preventDefault();
@@ -1336,13 +1336,13 @@ class="panel">
 	  var interval = null;
 	  
 	  function handle(delta) {
-	  var animationInterval = 20; //controls the scroll animation after scroll is done
-		var scrollSpeed = 20; //controls the scroll animation after scroll is done
+	  var animationInterval = 15; //controls the scroll animation after scroll is done
+		var scrollSpeed = 15; //controls the scroll animation after scroll is done
 	  
 	  if (end == null) {
 		end = $(window).scrollTop();
 		}
-		end -= 20 * delta;
+		end -= 15 * delta;
 		goUp = delta > 0;
 	  
 		if (interval == null) {
