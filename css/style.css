@@ -40,6 +40,9 @@ body {
   background-position: left;
   background-size: cover;
 }
+#stair-section{
+  margin-top:170px;
+}
 
 /* -------------------------------- SECTIONS------------------------------- */
 
@@ -262,6 +265,9 @@ body {
   #loremTop {
     top: 55%;
   }
+  #stair-section{
+    margin-top:550px !important;
+  }
 }
 
 @media only screen and (max-width: 886px) {
@@ -293,11 +299,15 @@ body {
 
 @media only screen and (max-width: 1200px) {
   .inspiration-bg {
-    margin-top: 500px;
-    height: 400px;
+    margin-top: 500px ;
+    height: 400px ;
     background-attachment: scroll;
     background-size: 120%;
     background-size: cover;
+  }
+ 
+  #stair-section{
+    margin-top:400px;
   }
 
   @media only screen and (max-width: 568px) {
