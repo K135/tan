@@ -22,7 +22,7 @@
 body {
   font-family: serif;
   font-size: 18px;
-  overflow-x: hidden;
+  overflow-x: hidden !important;
 }
 .hero-section {
   position: relative;
@@ -30,6 +30,9 @@ body {
   overflow-x: hidden;
   background-attachment: fixed;
   background-repeat: repeat;
+}
+#lorem{
+  font-size:45px;
 }
 
 .slider-section {
@@ -281,9 +284,7 @@ body {
   .hero-section .pend img {
     position: absolute;
   }
-  #lorem {
-    font-size: 40px;
-  }
+  
 }
 @media only screen and (min-width: 150px) {
   .slider-section {
@@ -312,29 +313,29 @@ body {
 
   @media only screen and (max-width: 568px) {
     #lorem {
-      font-size: 30px;
+      font-size: 35px;
     }
     #loremTop {
-      top: 40%;
+      top: 60%;
     }
   }
 
   @media only screen and (max-width: 445px) {
     #lorem {
-      font-size: 25px;
+      font-size: 30px;
     }
     #loremTop {
-      top: 38%;
+      top: 68%;
     }
   }
 
   @media only screen and (max-width: 435px) {
     #lorem {
     
-      font-size: 15px;
+      font-size: 25px;
     }
     #loremTop {
-      top: 25%;
+      top: 70%;
     }
   }
 
