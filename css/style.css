@@ -31,8 +31,8 @@ body {
   background-attachment: fixed;
   background-repeat: repeat;
 }
-#lorem{
-  font-size:45px;
+#lorem {
+  font-size: 45px;
 }
 
 .slider-section {
@@ -43,8 +43,8 @@ body {
   background-position: left;
   background-size: cover;
 }
-#stair-section{
-  margin-top:170px;
+#stair-section {
+  margin-top: 170px;
 }
 
 /* -------------------------------- SECTIONS------------------------------- */
@@ -177,15 +177,15 @@ body {
   height: 0;
 }
 .videoWrapper iframe {
-  opacity:0;
+  opacity: 0;
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  border-radius: 20px;
-  background:transparent;
-} 
+  border-radius: 100px;
+  background: transparent;
+}
 /* --------------------------------------Youtube VIDEO IFRAME------------------------*/
 
 /* --------------------------------------FLOAT OBJECT--------------------------------*/
@@ -270,8 +270,8 @@ body {
   #loremTop {
     top: 55%;
   }
-  #stair-section{
-    margin-top:550px !important;
+  #stair-section {
+    margin-top: 550px !important;
   }
 }
 
@@ -286,7 +286,6 @@ body {
   .hero-section .pend img {
     position: absolute;
   }
-  
 }
 @media only screen and (min-width: 150px) {
   .slider-section {
@@ -302,15 +301,15 @@ body {
 
 @media only screen and (max-width: 1200px) {
   .inspiration-bg {
-    margin-top: 500px ;
-    height: 400px ;
+    margin-top: 500px;
+    height: 400px;
     background-attachment: scroll;
     background-size: 120%;
     background-size: cover;
   }
- 
-  #stair-section{
-    margin-top:400px;
+
+  #stair-section {
+    margin-top: 400px;
   }
 
   @media only screen and (max-width: 568px) {
@@ -325,7 +324,7 @@ body {
   @media only screen and (max-width: 445px) {
     #lorem {
       font-size: 30px;
-      width:65vw;
+      width: 65vw;
     }
     #loremTop {
       top: 68%;
@@ -334,7 +333,7 @@ body {
 
   @media only screen and (max-width: 435px) {
     #lorem {
-     width:65vw;
+      width: 65vw;
       font-size: 25px;
     }
     #loremTop {
