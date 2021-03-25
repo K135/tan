@@ -804,7 +804,7 @@ class="panel">
 
 
 
-	<section  style="z-index:3; position:relative;background: url(./img/lightt.png);background-attachment: fixed;background-repeat:repeat;height:140vh; ">
+	<section  style="z-index:3; position:relative;background: url(./img/lightt.png);background-attachment: fixed;background-repeat:repeat;min-height:140vh ">
 		<!-- <div style="position:absolute;top:0;right:0;left:0;bottom:0;background-color: white;opacity:0.3;"></div> -->
 		
 		<div  style="position:relative;overflow-x: hidden; height:300px;" >
@@ -882,10 +882,7 @@ class="panel">
 			 <!---------------------      Lamp SECTION END    ----------------------->
 			 <div  style="position:relative; min-height:350px;" >
 			 <div id="loremTop" class="container-fluid "  >
-				
-
-				<h1 id="lorem" class="text-center" style="margin-top:10px;margin-bottom:10px;">Adorning the City of Gold</h1>
-
+				<h1 id="lorem" class="text-center" style="margin-top:10px;margin-bottom:10px;"> Adorning the City of Gold</h1>
 				<center>
 				<img src='./img/underline.png' class="img-fluid" alt="" style="max-width :200px;width:100%;height:auto;">
 			  </center>
@@ -1305,11 +1302,16 @@ class="panel">
 		}
 
 		if( $(window).width()>992){
-
+		 $toop=375;
+			// $('.cookies-close-icon').click(function(){
+			//  toop = 437;});
 		if(scroll >= 560){
-
+			
+			// $toop+=62;
+		
+			
 			$('.invi').css('position','absolute');
-			$('.invi').css('top','375px');
+			$('.invi').css('top',$toop);
 
 		}
 		else {
