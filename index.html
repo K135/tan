@@ -804,7 +804,7 @@ class="panel">
 
 
 
-	<section  style="z-index:3; position:relative;background: url(./img/lightt.png);background-attachment: fixed;background-repeat:repeat; ">
+	<section  style="z-index:3; position:relative;background: url(./img/lightt.png);background-attachment: fixed;background-repeat:repeat;height:140vh; ">
 		<!-- <div style="position:absolute;top:0;right:0;left:0;bottom:0;background-color: white;opacity:0.3;"></div> -->
 		
 		<div  style="position:relative;overflow-x: hidden; height:300px;" >
@@ -882,7 +882,7 @@ class="panel">
 			 <!---------------------      Lamp SECTION END    ----------------------->
 			 <div  style="position:relative; min-height:350px;" >
 			 <div id="loremTop" class="container-fluid "  >
-				<h1 id="lorem" class="text-center" style="margin-top:10px;margin-bottom:10px;">aTanishq | Adorning the City of Gold</h1>
+				<h1 id="lorem" class="text-center" style="margin-top:10px;margin-bottom:10px;">Tanishq | Adorning the City of Gold</h1>
 				<center>
 				<img src='./img/underline.png' class="img-fluid" alt="" style="max-width :200px;width:100%;height:auto;">
 			  </center>
@@ -1170,7 +1170,7 @@ class="panel">
 				<div class="col-xs-12">
 					<div class="sign-up-section">
 						<p>Sign up to receive exclusive offers and news</p>
-<form name="subscriptionForm" ng-submit="newsletterSubscription();">
+	<form name="subscriptionForm" ng-submit="newsletterSubscription();">
 						<div class="form-group">
 							<input name="subscribe" type="text" ng-model="subscriptionEmailId" maxlength="{{globalPropertiesList.EMAILADDRESS_MAX_LENGTH}}" ng-pattern="emailRegexp" class="form-control col-xs-8" placeholder="ENTER YOUR EMAIL ADDRESS">
 							<button type="submit" class="btn btn-primary">Subscribe</button>
@@ -1302,16 +1302,19 @@ class="panel">
 		}
 
 		if( $(window).width()>992){
+
 		if(scroll >= 560){
+
 			$('.invi').css('position','absolute');
-			$('.invi').css('top','389px');
+			$('.invi').css('top','375px');
+
 		}
 		else {
 			
 			$('.invi').css('position','fixed');
 			$('.invi').css('top','0');
 			
-		}
+		}		
 	  }
 
 		});
@@ -1336,7 +1339,7 @@ class="panel">
 	  var interval = null;
 	  
 	  function handle(delta) {
-	  var animationInterval = 15; //controls the scroll animation after scroll is done
+	  var animationInterval = 9; //controls the scroll animation after scroll is done
 		var scrollSpeed = 15; //controls the scroll animation after scroll is done
 	  
 	  if (end == null) {
