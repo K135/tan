@@ -1123,286 +1123,286 @@
 </head>
 
 <body>
-    <!-- <div id="header"  >
-<header >
+    <div id="header">
+        <header>
 
-<div class="container-fluid no-padding cookies-msg alert animated slideInDown" >
-    <div class="container">
-        <div class="row">
-            <p class="cookie-text col-md-11 col-xs-11">We use cookies to optimise your visit. By continuing to browse our site you are accepting our cookie policy.</p>
-            <a href="javascript:;" class="close-icon col-md-1 col-xs-1 cookies-close-icon" onclick="cookieInfoHide()"></a>
-        </div>
-    </div>
-</div>
-       <div class="container-fluid brand-selector-container collapse collapsed" id="brandSelector" >
-        <div class="brand-selector-title text-center">SELECT A BRAND SITE</div>
-        <ul class="row col-xs-12 col-md-12 text-center brand-logos no-padding">
-           			
-		  <!--<li class="col-xs-6 col-sm-3 no-padding">
-				<a href="[Component name="env_lib/brand selector/tanishq" format="url"]">
-					<img defer-image-load image-src="[Component name="tanishq_design_lib/img/logo/tanishq-logo" format="url"]">
-				</a>
-			</li>-->
-    <li class="col-xs-6 col-sm-3 no-padding">
-        <a href="[Component name=" env_lib/brand selector/titan " format="url "]">
-					<img defer-image-load image-src="[Component name="tanishq_design_lib/img/logo/titan-logo" format="url"]>
-				</a>
-    </li>
-    <li class="col-xs-6 col-sm-3 no-padding">
-        <a href="[Component name=" env_lib/brand selector/fastrack " format="url "]">
-            <img defer-image-load image-src="[Component name=" tanishq_design_lib/img/logo/fastrack-logo " format="url "]">
-        </a>
-    </li>
-    <li class="col-xs-6 col-sm-3 no-padding">
-        <a href="[Component name=" env_lib/brand selector/helios " format="url "]">
-            <img defer-image-load image-src="[Component name=" tanishq_design_lib/img/logo/helios-logo " format="url "]">
-        </a>
-    </li>
-    <li class="col-xs-6 col-sm-3 no-padding">
-        <a href="[Component name=" env_lib/brand selector/xylys " format="url "]">
-            <img defer-image-load image-src="[Component name=" tanishq_design_lib/img/logo/xylys-logo " format="url "]">
-        </a>
-    </li>
-    <li class="col-xs-6 col-sm-3 no-padding">
-        <a href="[Component name=" env_lib/brand selector/skinn " format="url "]">
-            <img defer-image-load image-src="[Component name=" tanishq_design_lib/img/logo/skinn-logo " format="url "]">
-        </a>
-    </li>
-    <li class="col-xs-6 col-sm-3 no-padding">
-        <a href="[Component name=" env_lib/brand selector/sonata " format="url "]">
-            <img defer-image-load image-src="[Component name=" tanishq_design_lib/img/logo/sonata-logo " format="url "]">
-        </a>
-    </li>
-    <li class="col-xs-6 col-sm-3 no-padding">
-        <a href="[Component name=" env_lib/brand selector/mia " format="url "]">
-            <img defer-image-load image-src="[Component name=" tanishq_design_lib/img/logo/mia-logo " format="url "]">
-        </a>
-    </li>
-    </ul>
-    <!--<div class="brandselect-backdrop"></div>-->
-    </div>
-    <div class="container-fluid currency-selector-container collapse collapsed hidden-xs hidden-sm" id="currencySelector">
-        <div class="currency-selector-title text-center">SELECT A CURRENCY</div>
-        <ul class="row col-xs-12 col-md-12 currency currency-logos no-padding">
-            <li ng-class="{'currencyEnable':crncy.additionalValue[0].value === cookieCurrencyvalue, 'currencyEnableFirst': $first && cookieCurrencyvalue === undefined}" class="col-xs-6 col-sm-2 no-padding">
-                <button>{{crncy.additionalValue[0].value}}<span ng-if="!(crncy.additionalValue[0].value == 'INR')">{{crncy.currencySymbol}}</span>
-                 <span ng-if="crncy.additionalValue[0].value == 'INR'"><i class="fa fa-inr"></i></span></button>
-            </li>
-        </ul>
-    </div>
-    <div class="category-background"></div>
-    <nav class="navbar navbar-default">
-        <hr class="col-xs-12 no-padding divider">
-        <div class="container-fluid">
-            <div class="row">
-                <div class="navbar-header scroll-menu col-xs-12 col-md-12 no-padding">
-                    <div class="col-md-5 col-xs-3 no-padding selector-container">
-                        <a class="scroll-menu navbar-brand col-md-3 col-xs-12 brands-selector" data-toggle="collapse" data-target="#brandSelector">
-								BRANDS<span class="brand-arrow"></span>
-							</a>
-                        <a class="scroll-menu navbar-brand col-md-6 currency-selector hidden-xs hidden-sm" data-toggle="collapse" data-target="#currencySelector" href="">
-								CURRENCY SELECTOR <span class="brand-arrow"></span>
-							</a>
-                    </div>
-                    <div class="col-xs-6">
-                        <a href="" class="scroll-menu navbar-brand hidden-md hidden-lg account col-xs-12"><span>LOGIN</span ></a>
-                        <!-- <a href="javascript:void(0)" class="scroll-menu navbar-brand hidden-md hidden-lg account col-xs-12" ng-click="myaccount()" ng-class="{'disableLogin' : loginPathDisable}">MY ACCOUNT</a> -->
-                    </div>
-                    <div class="col-md-7 col-xs-3">
-                        <ul class="nav navbar-nav pull-right col-xs-12 no-padding scroll-menu">
-                            <li class="pull-right cart-section">
-                                <a class="hidden-xs cart-pull-right">CART(<span id="cartFlag">0</span>)</a>
-                                <a class="visible-xs cart-padding">CART(<span >0</span>)</a>
-                            </li>
-                            <li class="pull-right hidden-xs hidden-sm">
-                                <a href="javascript:;" id="wishlist-header">WISHLIST</a>
-                            </li>
-                            <li class="pull-right  hidden-xs hidden-sm"><a href="" target="_blank" title="" class="wishlist scrollHide">GOLDEN HARVEST SCHEME</a></li>
-                            <li class="pull-right login hidden-xs hidden-sm">
-                                <a href="javascript:;" ng-if="loginStatus" class="no-padding-left">(LOGOUT)</a>
-                                <a id="loginPath" href="{{loginPath}}" ng-cloak ng-if="!loginStatus" ng-class="{'disableLogin' : loginPathDisable}" target="_self">LOGIN</a>
-                            </li>
-                            <li class="pull-right hidden-xs hidden-sm">
-                                <a href="{{accountSummaryPath}}" class="no-padding-right" id="accountsummary-header" ng-class="{'disableLogin' : accountSummaryPathDisable}" target="_self">HI <span id="firstName">Titan! </span>
-									</a>
-                            </li>
-                        </ul>
+            <div class="container-fluid no-padding cookies-msg alert animated slideInDown">
+                <div class="container">
+                    <div class="row">
+                        <p class="cookie-text col-md-11 col-xs-11">We use cookies to optimise your visit. By continuing to browse our site you are accepting our cookie policy.</p>
+                        <a href="javascript:;" class="close-icon col-md-1 col-xs-1 cookies-close-icon" onclick="cookieInfoHide()"></a>
                     </div>
                 </div>
-                <!--sticky header starts-->
-                <div class="sticky-header col-md-12 no-padding">
-                    <div class="col-md-2 hidden-sm hidden-xs no-padding">
-                        <a class="logo-margin col-md-12 hidden-xs" href="/home" onclick="window.location.href = '/home';">
-                            <span class="tanishq-logo"><img src="img/logo.png" class="img-responsive" alt=""></span>
-                            <span class="t-logo"><img src="img/logo-t.png" class="img-responsive" alt=""></span>
+            </div>
+            <div class="container-fluid brand-selector-container collapse collapsed" id="brandSelector">
+                <div class="brand-selector-title text-center">SELECT A BRAND SITE</div>
+                <ul class="row col-xs-12 col-md-12 text-center brand-logos no-padding">
 
+                    <!--<li class="col-xs-6 col-sm-3 no-padding">
+				<a href="[Component name="env_lib/brand selector/tanishq" format="url"]">
+					<img defer-image-load image-src="[Component name="tanishq_design_lib/images/logo/tanishq-logo" format="url"]">
+				</a>
+			</li>-->
+                    <li class="col-xs-6 col-sm-3 no-padding">
+                        <a href="[Component name=" env_lib/brand selector/titan " format="url "]">
+                            <img defer-image-load image-src="[Component name=" tanishq_design_lib/images/logo/titan-logo " format="url "]">
                         </a>
-                    </div>
-                    <div class="col-md-9 col-xs-12 no-padding">
-                        <div class="col-xs-2 no-padding srch-icon-div">
-                            <button type="button" class="navbar-toggle pull-left col-xs-3 collapsed" data-toggle="collapse" data-target="#menu">
+                    </li>
+                    <li class="col-xs-6 col-sm-3 no-padding">
+                        <a href="[Component name=" env_lib/brand selector/fastrack " format="url "]">
+                            <img defer-image-load image-src="[Component name=" tanishq_design_lib/images/logo/fastrack-logo " format="url "]">
+                        </a>
+                    </li>
+                    <li class="col-xs-6 col-sm-3 no-padding">
+                        <a href="[Component name=" env_lib/brand selector/helios " format="url "]">
+                            <img defer-image-load image-src="[Component name=" tanishq_design_lib/images/logo/helios-logo " format="url "]">
+                        </a>
+                    </li>
+                    <li class="col-xs-6 col-sm-3 no-padding">
+                        <a href="[Component name=" env_lib/brand selector/xylys " format="url "]">
+                            <img defer-image-load image-src="[Component name=" tanishq_design_lib/images/logo/xylys-logo " format="url "]">
+                        </a>
+                    </li>
+                    <li class="col-xs-6 col-sm-3 no-padding">
+                        <a href="[Component name=" env_lib/brand selector/skinn " format="url "]">
+                            <img defer-image-load image-src="[Component name=" tanishq_design_lib/images/logo/skinn-logo " format="url "]">
+                        </a>
+                    </li>
+                    <li class="col-xs-6 col-sm-3 no-padding">
+                        <a href="[Component name=" env_lib/brand selector/sonata " format="url "]">
+                            <img defer-image-load image-src="[Component name=" tanishq_design_lib/images/logo/sonata-logo " format="url "]">
+                        </a>
+                    </li>
+                    <li class="col-xs-6 col-sm-3 no-padding">
+                        <a href="[Component name=" env_lib/brand selector/mia " format="url "]">
+                            <img defer-image-load image-src="[Component name=" tanishq_design_lib/images/logo/mia-logo " format="url "]">
+                        </a>
+                    </li>
+                </ul>
+                <!--<div class="brandselect-backdrop"></div>-->
+            </div>
+            <div class="container-fluid currency-selector-container collapse collapsed hidden-xs hidden-sm" id="currencySelector">
+                <div class="currency-selector-title text-center">SELECT A CURRENCY</div>
+                <ul class="row col-xs-12 col-md-12 currency currency-logos no-padding">
+                    <li ng-class="{'currencyEnable':crncy.additionalValue[0].value === cookieCurrencyvalue, 'currencyEnableFirst': $first && cookieCurrencyvalue === undefined}" class="col-xs-6 col-sm-2 no-padding">
+                        <button>{{crncy.additionalValue[0].value}}<span ng-if="!(crncy.additionalValue[0].value == 'INR')">{{crncy.currencySymbol}}</span>
+                 <span ng-if="crncy.additionalValue[0].value == 'INR'"><i class="fa fa-inr"></i></span></button>
+                    </li>
+                </ul>
+            </div>
+            <div class="category-background"></div>
+            <nav class="navbar navbar-default">
+                <hr class="col-xs-12 no-padding divider">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="navbar-header scroll-menu col-xs-12 col-md-12 no-padding">
+                            <div class="col-md-5 col-xs-3 no-padding selector-container">
+                                <a class="scroll-menu navbar-brand col-md-3 col-xs-12 brands-selector" data-toggle="collapse" data-target="#brandSelector">
+								BRANDS<span class="brand-arrow"></span>
+							</a>
+                                <a class="scroll-menu navbar-brand col-md-6 currency-selector hidden-xs hidden-sm" data-toggle="collapse" data-target="#currencySelector" href="">
+								CURRENCY SELECTOR <span class="brand-arrow"></span>
+							</a>
+                            </div>
+                            <div class="col-xs-6">
+                                <a href="" class="scroll-menu navbar-brand hidden-md hidden-lg account col-xs-12"><span>LOGIN</span ></a>
+                                <!-- <a href="javascript:void(0)" class="scroll-menu navbar-brand hidden-md hidden-lg account col-xs-12" ng-click="myaccount()" ng-class="{'disableLogin' : loginPathDisable}">MY ACCOUNT</a> -->
+                            </div>
+                            <div class="col-md-7 col-xs-3">
+                                <ul class="nav navbar-nav pull-right col-xs-12 no-padding scroll-menu">
+                                    <li class="pull-right cart-section">
+                                        <a class="hidden-xs cart-pull-right">CART(<span id="cartFlag">0</span>)</a>
+                                        <a class="visible-xs cart-padding">CART(<span >0</span>)</a>
+                                    </li>
+                                    <li class="pull-right hidden-xs hidden-sm">
+                                        <a href="javascript:;" id="wishlist-header">WISHLIST</a>
+                                    </li>
+                                    <li class="pull-right  hidden-xs hidden-sm"><a href="" target="_blank" title="" class="wishlist scrollHide">GOLDEN HARVEST SCHEME</a></li>
+                                    <li class="pull-right login hidden-xs hidden-sm">
+                                        <a href="javascript:;" ng-if="loginStatus" class="no-padding-left">(LOGOUT)</a>
+                                        <a id="loginPath" href="{{loginPath}}" ng-cloak ng-if="!loginStatus" ng-class="{'disableLogin' : loginPathDisable}" target="_self">LOGIN</a>
+                                    </li>
+                                    <li class="pull-right hidden-xs hidden-sm">
+                                        <a href="{{accountSummaryPath}}" class="no-padding-right" id="accountsummary-header" ng-class="{'disableLogin' : accountSummaryPathDisable}" target="_self">HI <span id="firstName">Titan! </span>
+									</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <!--sticky header starts-->
+                        <div class="sticky-header col-md-12 no-padding">
+                            <div class="col-md-2 hidden-sm hidden-xs no-padding">
+                                <a class="logo-margin col-md-12 hidden-xs" href="/home" onclick="window.location.href = '/home';">
+                                    <span class="tanishq-logo"><img src="img/logo.png" class="img-responsive" alt=""></span>
+                                    <span class="t-logo"><img src="img/logo-t.png" class="img-responsive" alt=""></span>
+
+                                </a>
+                            </div>
+                            <div class="col-md-9 col-xs-12 no-padding">
+                                <div class="col-xs-2 no-padding srch-icon-div">
+                                    <button type="button" class="navbar-toggle pull-left col-xs-3 collapsed" data-toggle="collapse" data-target="#menu">
 									<div class="burgerIcon">
 										<span></span>
 										<span></span>
 										<span></span>
 									</div>
 								</button>
-                        </div>
-                        <div class="mob-logo-container col-xs-8">
-                            <a class="navbar-brand col-xs-12 hidden-md hidden-lg " href="/home">
-                                <img src='img/logo.png' class="img-responsive tanishq-logo" alt="">
-                                <div class="t-logo-container"><img src="img/logo-t.png" class="img-responsive t-logo" alt=""></div>
-                            </a>
-                        </div>
-                        <div class="hidden-md hidden-lg col-xs-2 no-padding search-icon-div">
-                            <div class="col-xs-12 search">
-                                <!-- <a href="javascript:void(0)" data-toggle="collapse" data-target="#searchBox" class="closeSearch" ng-click="searchtoggle=!searchtoggle;openSearchBox()">
-										<img ng-if="!searchtoggle" src='[Component name="tanishq_design_lib/img/icon/search" rendition="auto" format="url"] ' class="img-responsive" alt="" >
-										 <img ng-if="searchtoggle" src='[Component name="tanishq_design_lib/img/icon/close" rendition="auto" format="url"]' class="img-responsive serch-close" alt="" >
+                                </div>
+                                <div class="mob-logo-container col-xs-8">
+                                    <a class="navbar-brand col-xs-12 hidden-md hidden-lg " href="/home">
+                                        <img src='img/logo.png' class="img-responsive tanishq-logo" alt="">
+                                        <div class="t-logo-container"><img src="img/logo-t.png" class="img-responsive t-logo" alt=""></div>
+                                    </a>
+                                </div>
+                                <div class="hidden-md hidden-lg col-xs-2 no-padding search-icon-div">
+                                    <div class="col-xs-12 search">
+                                        <!-- <a href="javascript:void(0)" data-toggle="collapse" data-target="#searchBox" class="closeSearch" ng-click="searchtoggle=!searchtoggle;openSearchBox()">
+										<img ng-if="!searchtoggle" src='[Component name="tanishq_design_lib/images/icon/search" rendition="auto" format="url"] ' class="img-responsive" alt="" >
+										 <img ng-if="searchtoggle" src='[Component name="tanishq_design_lib/images/icon/close" rendition="auto" format="url"]' class="img-responsive serch-close" alt="" >
 									</a> -->
-                                <a data-toggle="collapse" data-target="#searchBox" class="closeSearch collapsed closeSearch-mobile" ng-click="openSearchBox()"></a>
+                                        <a data-toggle="collapse" data-target="#searchBox" class="closeSearch collapsed closeSearch-mobile" ng-click="openSearchBox()"></a>
 
-                            </div>
-                        </div>
-                        <div class="col-xs-12 no-padding">
-                            <div class="col-xs-12 collapsible-nav-option collapse navbar-collapse menu-wrapper no-padding" id="menu">
-                                <div class="row">
-                                    <div class="col-xs-12 no-padding main-option">
-                                        <button type="button" class="hidden-xs select burger-desktop">
+                                    </div>
+                                </div>
+                                <div class="col-xs-12 no-padding">
+                                    <div class="col-xs-12 collapsible-nav-option collapse navbar-collapse menu-wrapper no-padding" id="menu">
+                                        <div class="row">
+                                            <div class="col-xs-12 no-padding main-option">
+                                                <button type="button" class="hidden-xs select burger-desktop">
 							<img src='img/icon/burger.png' alt="" class="img-responsive">
 						</button>
 
-                                        <ul class="nav navbar-nav col-xs-12 no-padding panel-group">
-                                            <li class="center-option">
-                                                <ul class="nav navbar-nav col-xs-12 no-padding " id="accordion">
-                                                    <li class="panel">
-                                                        <div class="panel-heading">
-                                                            <a href="/jewellery" class="hidden-xs hidden-sm sublevel">JEWELLERY</a>
-                                                            <a data-toggle="collapse" data-parent="#accordion" data-target="#jewellery" class="visible-xs visible-sm">JEWELLERY <span class="plus-icon pull-right visible-xs visible-sm"></span></a>
-                                                        </div>
-                                                        <div id="jewellery" class="sub-menu panel-collapse collapse">
-                                                            <div>
-                                                                <ul class="col-md-2 col-md-offset-2 list-unstyled">
-                                                                    <li><a href="/shop/earings" target="_self">Earrings <span class="arrow-right-icon pull-right visible-xs visible-sm"></span></a></li>
-                                                                    <li><a href="/shop/pendents" target="_self">Pendents <span class="arrow-right-icon pull-right visible-xs visible-sm"></span></a></li>
-                                                                    <li><a href="/shop/rings" target="_self">Finger Rings <span class="arrow-right-icon pull-right visible-xs visible-sm"></span></a></li>
-                                                                    <li><a href="/shop/bangles" target="_self">Bangles <span class="arrow-right-icon pull-right visible-xs visible-sm"></span></a></li>
-                                                                    <li><a href="/shop/bracelets" target="_self">Bracelets <span class="arrow-right-icon pull-right visible-xs visible-sm"></span></a></li>
+                                                <ul class="nav navbar-nav col-xs-12 no-padding panel-group">
+                                                    <li class="center-option">
+                                                        <ul class="nav navbar-nav col-xs-12 no-padding " id="accordion">
+                                                            <li class="panel">
+                                                                <div class="panel-heading">
+                                                                    <a href="/jewellery" class="hidden-xs hidden-sm sublevel">JEWELLERY</a>
+                                                                    <a data-toggle="collapse" data-parent="#accordion" data-target="#jewellery" class="visible-xs visible-sm">JEWELLERY <span class="plus-icon pull-right visible-xs visible-sm"></span></a>
+                                                                </div>
+                                                                <div id="jewellery" class="sub-menu panel-collapse collapse">
+                                                                    <div>
+                                                                        <ul class="col-md-2 col-md-offset-2 list-unstyled">
+                                                                            <li><a href="/shop/earings" target="_self">Earrings <span class="arrow-right-icon pull-right visible-xs visible-sm"></span></a></li>
+                                                                            <li><a href="/shop/pendents" target="_self">Pendents <span class="arrow-right-icon pull-right visible-xs visible-sm"></span></a></li>
+                                                                            <li><a href="/shop/rings" target="_self">Finger Rings <span class="arrow-right-icon pull-right visible-xs visible-sm"></span></a></li>
+                                                                            <li><a href="/shop/bangles" target="_self">Bangles <span class="arrow-right-icon pull-right visible-xs visible-sm"></span></a></li>
+                                                                            <li><a href="/shop/bracelets" target="_self">Bracelets <span class="arrow-right-icon pull-right visible-xs visible-sm"></span></a></li>
 
-                                                                    <li><a href="/shop/chains" target="_self">Chains <span class="arrow-right-icon pull-right visible-xs visible-sm"></span></a></li>
-                                                                </ul>
-                                                                <ul class=" col-md-2 list-unstyled">
-                                                                    <li><a href="/shop/nosepins" target="_self">NosePins <span class="arrow-right-icon pull-right visible-xs visible-sm"></span></a></li>
-                                                                    <li><a href="/shop/pendant-earrings-set" target="_self">Pendant and Earrings Set <span class="arrow-right-icon pull-right visible-xs visible-sm"></span></a></li>
-                                                                    <li><a href="/shop/mangalsutra" target="_self">Mangalsutra <span class="arrow-right-icon pull-right visible-xs visible-sm"></span></a></li>
-                                                                    <li><a href="/shop/gold-coins" target="_self">Gold Coins <span class="arrow-right-icon pull-right visible-xs visible-sm"></span></a></li>
+                                                                            <li><a href="/shop/chains" target="_self">Chains <span class="arrow-right-icon pull-right visible-xs visible-sm"></span></a></li>
+                                                                        </ul>
+                                                                        <ul class=" col-md-2 list-unstyled">
+                                                                            <li><a href="/shop/nosepins" target="_self">NosePins <span class="arrow-right-icon pull-right visible-xs visible-sm"></span></a></li>
+                                                                            <li><a href="/shop/pendant-earrings-set" target="_self">Pendant and Earrings Set <span class="arrow-right-icon pull-right visible-xs visible-sm"></span></a></li>
+                                                                            <li><a href="/shop/mangalsutra" target="_self">Mangalsutra <span class="arrow-right-icon pull-right visible-xs visible-sm"></span></a></li>
+                                                                            <li><a href="/shop/gold-coins" target="_self">Gold Coins <span class="arrow-right-icon pull-right visible-xs visible-sm"></span></a></li>
 
-                                                                    <li><a href="/shop/viewAll" target="_self">View All<span class="arrow-right-icon pull-right visible-xs visible-sm"></span></a></li>
+                                                                            <li><a href="/shop/viewAll" target="_self">View All<span class="arrow-right-icon pull-right visible-xs visible-sm"></span></a></li>
 
-                                                                </ul>
+                                                                        </ul>
 
 
-                                                                <div class="col-md-3 hidden-xs hidden-sm pull-right subanav-prom">
-                                                                    <a href="/shop/chains" target="_self">
-                                                                        <img src="img/subnav.png" class="img-responsive" alt="">
-                                                                        <div>
-                                                                            <p>Shop Gold and Diamond Earring</p>
-                                                                            <h3>Shop now</h3>
+                                                                        <div class="col-md-3 hidden-xs hidden-sm pull-right subanav-prom">
+                                                                            <a href="/shop/chains" target="_self">
+                                                                                <img src="img/subnav.png" class="img-responsive" alt="">
+                                                                                <div>
+                                                                                    <p>Shop Gold and Diamond Earring</p>
+                                                                                    <h3>Shop now</h3>
+                                                                                </div>
+                                                                            </a>
                                                                         </div>
-                                                                    </a>
+
+                                                                    </div>
                                                                 </div>
 
-                                                            </div>
-                                                        </div>
-
-                                                    </li>
+                                                            </li>
 
 
 
 
 
-                                                    <li class="panel">
-                                                        <div class="panel-heading">
+                                                            <li class="panel">
+                                                                <div class="panel-heading">
 
-                                                            <a href="/shop/viewAll?q=gold" class="sublevel">Gold</a>
-                                                            <!--a data-toggle="collapse" data-parent="#accordion-main,#accordion-main1,#accordion" href="#gold" class="visible-xs visible-sm">Gold <span class="plus-icon pull-right visible-xs visible-sm"></span></a-->
+                                                                    <a href="/shop/viewAll?q=gold" class="sublevel">Gold</a>
+                                                                    <!--a data-toggle="collapse" data-parent="#accordion-main,#accordion-main1,#accordion" href="#gold" class="visible-xs visible-sm">Gold <span class="plus-icon pull-right visible-xs visible-sm"></span></a-->
 
-                                                        </div>
-                                                        <div id="Gold" class="sub-menu panel-collapse collapse">
-                                                            <div>
-                                                                <ul class="col-md-2 col-md-offset-2 list-unstyled">
-                                                                    <li><a href="/shop/earings" target="_self">Earings <span class="arrow-right-icon pull-right visible-xs visible-sm"></span></a></li>
-                                                                    <li><a href="/shop/pendents" target="_self">Pendents <span class="arrow-right-icon pull-right visible-xs visible-sm"></span></a></li>
-                                                                    <li><a href="/shop/finger-rings" target="_self">Finger Rings <span class="arrow-right-icon pull-right visible-xs visible-sm"></span></a></li>
-                                                                    <li><a href="/shop/bangales" target="_self">Bangales <span class="arrow-right-icon pull-right visible-xs visible-sm"></span></a></li>
-                                                                    <li><a href="/shop/bracelets" target="_self">Bracelets <span class="arrow-right-icon pull-right visible-xs visible-sm"></span></a></li>
-
-                                                                    <li><a href="/shop/chains" target="_self">Chains <span class="arrow-right-icon pull-right visible-xs visible-sm"></span></a></li>
-                                                                </ul>
-                                                                <ul class=" col-md-2 list-unstyled">
-                                                                    <li><a href="/shop/nosepins" target="_self">NosePins <span class="arrow-right-icon pull-right visible-xs visible-sm"></span></a></li>
-                                                                    <li><a href="/shop/pendant-earrings-set" target="_self">Pendant and Earrings Set <span class="arrow-right-icon pull-right visible-xs visible-sm"></span></a></li>
-                                                                    <li><a href="/shop/mangalsutra" target="_self">Mangalsutra <span class="arrow-right-icon pull-right visible-xs visible-sm"></span></a></li>
-                                                                    <li><a href="/shop/gold-coins" target="_self">Gold Coins <span class="arrow-right-icon pull-right visible-xs visible-sm"></span></a></li>
-
-                                                                </ul>
-                                                                <ul class=" col-md-2 list-unstyled">
-
-                                                                </ul>
-                                                                <div class="col-md-3 hidden-xs hidden-sm pull-right subanav-prom">
-                                                                    <a href="/shop/subham" target="_self">
-                                                                        <img src='img/subnav.png' class="img-responsive" alt="">
-                                                                        <div>
-                                                                            <p>Buy Gold Earring</p>
-                                                                            <h3>Shop now</h3>
-                                                                        </div>
-                                                                    </a>
                                                                 </div>
-                                                            </div>
-                                                        </div>
-                                                    </li>
+                                                                <div id="Gold" class="sub-menu panel-collapse collapse">
+                                                                    <div>
+                                                                        <ul class="col-md-2 col-md-offset-2 list-unstyled">
+                                                                            <li><a href="/shop/earings" target="_self">Earings <span class="arrow-right-icon pull-right visible-xs visible-sm"></span></a></li>
+                                                                            <li><a href="/shop/pendents" target="_self">Pendents <span class="arrow-right-icon pull-right visible-xs visible-sm"></span></a></li>
+                                                                            <li><a href="/shop/finger-rings" target="_self">Finger Rings <span class="arrow-right-icon pull-right visible-xs visible-sm"></span></a></li>
+                                                                            <li><a href="/shop/bangales" target="_self">Bangales <span class="arrow-right-icon pull-right visible-xs visible-sm"></span></a></li>
+                                                                            <li><a href="/shop/bracelets" target="_self">Bracelets <span class="arrow-right-icon pull-right visible-xs visible-sm"></span></a></li>
 
-                                                    <li class="panel">
-                                                        <div class="panel-heading">
-                                                            <a href="/shop/search-results/availability=include-out-of-stock&jewellery-type=diamond?q=diamond" class="sublevel">DIAMONDS</a>
-                                                        </div>
+                                                                            <li><a href="/shop/chains" target="_self">Chains <span class="arrow-right-icon pull-right visible-xs visible-sm"></span></a></li>
+                                                                        </ul>
+                                                                        <ul class=" col-md-2 list-unstyled">
+                                                                            <li><a href="/shop/nosepins" target="_self">NosePins <span class="arrow-right-icon pull-right visible-xs visible-sm"></span></a></li>
+                                                                            <li><a href="/shop/pendant-earrings-set" target="_self">Pendant and Earrings Set <span class="arrow-right-icon pull-right visible-xs visible-sm"></span></a></li>
+                                                                            <li><a href="/shop/mangalsutra" target="_self">Mangalsutra <span class="arrow-right-icon pull-right visible-xs visible-sm"></span></a></li>
+                                                                            <li><a href="/shop/gold-coins" target="_self">Gold Coins <span class="arrow-right-icon pull-right visible-xs visible-sm"></span></a></li>
 
-                                                        <div id="Diamond" class="sub-menu panel-collapse collapse">
-                                                            <div>
+                                                                        </ul>
+                                                                        <ul class=" col-md-2 list-unstyled">
 
-                                                                <ul class="col-md-2 col-md-offset-2 list-unstyled">
-                                                                    <li><a href="/shop/earings" target="_self">Earings <span class="arrow-right-icon pull-right visible-xs visible-sm"></span></a></li>
-                                                                    <li><a href="/shop/pendents" target="_self">Pendents <span class="arrow-right-icon pull-right visible-xs visible-sm"></span></a></li>
-                                                                    <li><a href="/shop/finger-rings" target="_self">Finger Rings <span class="arrow-right-icon pull-right visible-xs visible-sm"></span></a></li>
-                                                                    <li><a href="/shop/bangales" target="_self">Bangales <span class="arrow-right-icon pull-right visible-xs visible-sm"></span></a></li>
-                                                                    <li><a href="/shop/bracelets" target="_self">Bracelets <span class="arrow-right-icon pull-right visible-xs visible-sm"></span></a></li>
-
-                                                                    <li><a href="/shop/chains" target="_self">Chains <span class="arrow-right-icon pull-right visible-xs visible-sm"></span></a></li>
-                                                                </ul>
-                                                                <ul class=" col-md-2 list-unstyled">
-                                                                    <li><a href="/shop/nosepins" target="_self">NosePins <span class="arrow-right-icon pull-right visible-xs visible-sm"></span></a></li>
-                                                                    <li><a href="/shop/pendant-earrings-set" target="_self">Pendant and Earrings Set <span class="arrow-right-icon pull-right visible-xs visible-sm"></span></a></li>
-                                                                    <li><a href="/shop/mangalsutra" target="_self">Mangalsutra <span class="arrow-right-icon pull-right visible-xs visible-sm"></span></a></li>
-                                                                    <li><a href="/shop/gold-coins" target="_self">Gold Coins <span class="arrow-right-icon pull-right visible-xs visible-sm"></span></a></li>
-
-                                                                </ul>
-                                                                <ul class=" col-md-2 list-unstyled">
-
-                                                                </ul>
-                                                                <div class="col-md-3 hidden-xs hidden-sm pull-right subanav-prom">
-                                                                    <a href="/shop/subham" target="_self">
-                                                                        <img src='img/subnav.png' class="img-responsive" alt="">
-                                                                        <div>
-                                                                            <p>Buy Diamond Earring</p>
-                                                                            <h3>Shop now</h3>
+                                                                        </ul>
+                                                                        <div class="col-md-3 hidden-xs hidden-sm pull-right subanav-prom">
+                                                                            <a href="/shop/subham" target="_self">
+                                                                                <img src='img/subnav.png' class="img-responsive" alt="">
+                                                                                <div>
+                                                                                    <p>Buy Gold Earring</p>
+                                                                                    <h3>Shop now</h3>
+                                                                                </div>
+                                                                            </a>
                                                                         </div>
-                                                                    </a>
+                                                                    </div>
                                                                 </div>
-                                                            </div>
-                                                        </div>
+                                                            </li>
 
-                                                    </li>
-                                                    <!--li class="panel">
+                                                            <li class="panel">
+                                                                <div class="panel-heading">
+                                                                    <a href="/shop/search-results/availability=include-out-of-stock&jewellery-type=diamond?q=diamond" class="sublevel">DIAMONDS</a>
+                                                                </div>
+
+                                                                <div id="Diamond" class="sub-menu panel-collapse collapse">
+                                                                    <div>
+
+                                                                        <ul class="col-md-2 col-md-offset-2 list-unstyled">
+                                                                            <li><a href="/shop/earings" target="_self">Earings <span class="arrow-right-icon pull-right visible-xs visible-sm"></span></a></li>
+                                                                            <li><a href="/shop/pendents" target="_self">Pendents <span class="arrow-right-icon pull-right visible-xs visible-sm"></span></a></li>
+                                                                            <li><a href="/shop/finger-rings" target="_self">Finger Rings <span class="arrow-right-icon pull-right visible-xs visible-sm"></span></a></li>
+                                                                            <li><a href="/shop/bangales" target="_self">Bangales <span class="arrow-right-icon pull-right visible-xs visible-sm"></span></a></li>
+                                                                            <li><a href="/shop/bracelets" target="_self">Bracelets <span class="arrow-right-icon pull-right visible-xs visible-sm"></span></a></li>
+
+                                                                            <li><a href="/shop/chains" target="_self">Chains <span class="arrow-right-icon pull-right visible-xs visible-sm"></span></a></li>
+                                                                        </ul>
+                                                                        <ul class=" col-md-2 list-unstyled">
+                                                                            <li><a href="/shop/nosepins" target="_self">NosePins <span class="arrow-right-icon pull-right visible-xs visible-sm"></span></a></li>
+                                                                            <li><a href="/shop/pendant-earrings-set" target="_self">Pendant and Earrings Set <span class="arrow-right-icon pull-right visible-xs visible-sm"></span></a></li>
+                                                                            <li><a href="/shop/mangalsutra" target="_self">Mangalsutra <span class="arrow-right-icon pull-right visible-xs visible-sm"></span></a></li>
+                                                                            <li><a href="/shop/gold-coins" target="_self">Gold Coins <span class="arrow-right-icon pull-right visible-xs visible-sm"></span></a></li>
+
+                                                                        </ul>
+                                                                        <ul class=" col-md-2 list-unstyled">
+
+                                                                        </ul>
+                                                                        <div class="col-md-3 hidden-xs hidden-sm pull-right subanav-prom">
+                                                                            <a href="/shop/subham" target="_self">
+                                                                                <img src='img/subnav.png' class="img-responsive" alt="">
+                                                                                <div>
+                                                                                    <p>Buy Diamond Earring</p>
+                                                                                    <h3>Shop now</h3>
+                                                                                </div>
+                                                                            </a>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+
+                                                            </li>
+                                                            <!--li class="panel">
 														<div class="panel-heading">
 															<a class="hidden-xs hidden-sm sublevel" href="/shop/search-results/availability=include-out-of-stock&jewellery-type=diamond?q=diamond">DIAMONDS</a>
 															<a data-toggle="collapse" data-parent="#accordion-main,#accordion-main1,#accordion" href="#diamonds" class="visible-xs visible-sm">DIAMONDS <span class="plus-icon pull-right visible-xs visible-sm"></span></a>
@@ -1418,7 +1418,7 @@
 																
 																<div class="col-md-3 hidden-xs hidden-sm pull-right subanav-prom">
 																	<a href="/shop/subham" target="_self">
-																		<img defer-image-load image-src='[Component name="tanishq_design_lib/img/header/diamonds_img" rendition="auto" format="url"] ' class="img-responsive" alt="">
+																		<img defer-image-load image-src='[Component name="tanishq_design_lib/images/header/diamonds_img" rendition="auto" format="url"] ' class="img-responsive" alt="">
 																		<div>
 																			<p>Earrings upto 40% off</p>
 																			<h3>Shop now</h3>
@@ -1430,100 +1430,100 @@
 													</li-->
 
 
-                                                    <li class="panel">
-                                                        <div class="panel-heading">
-                                                            <a href="/collection" class="hidden-xs hidden-sm sublevel">COLLECTION</a>
-                                                            <a data-toggle="collapse" data-parent="#accordion-main,#accordion-main1,#accordion" href="#collection" class="visible-xs visible-sm">COLLECTION <span class="plus-icon pull-right visible-xs visible-sm"></span></a>
+                                                            <li class="panel">
+                                                                <div class="panel-heading">
+                                                                    <a href="/collection" class="hidden-xs hidden-sm sublevel">COLLECTION</a>
+                                                                    <a data-toggle="collapse" data-parent="#accordion-main,#accordion-main1,#accordion" href="#collection" class="visible-xs visible-sm">COLLECTION <span class="plus-icon pull-right visible-xs visible-sm"></span></a>
 
-                                                        </div>
-                                                        <div id="collection" class="sub-menu panel-collapse collapse">
-                                                            <div>
-                                                                <ul class="col-md-2 col-md-offset-2 list-unstyled">
-                                                                    <li><a href="/shop/swarnam" target="_self">SWARNAM <span class="arrow-right-icon pull-right visible-xs visible-sm"></span></a></li>
-                                                                    <li><a href="/shop/mirayah	" target="_self">MIRAYAH <span class="arrow-right-icon pull-right visible-xs visible-sm"></span></a></li>
-                                                                    <li><a href="/shop/fine-line" target="_self">FINE LINE <span class="arrow-right-icon pull-right visible-xs visible-sm"></span></a></li>
-                                                                    <li><a href="/shop/subham" target="_self">SUBHAM <span class="arrow-right-icon pull-right visible-xs visible-sm"></span></a></li>
-                                                                    <li><a href="/shop/queen-of-hearts" target="_self">QUEEN OF HEARTS <span class="arrow-right-icon pull-right visible-xs visible-sm"></span></a></li>
-                                                                    <li><a href="/shop/amara" target="_self">AMARA <span class="arrow-right-icon pull-right visible-xs visible-sm"></span></a></li>
-                                                                    <li><a href="/shop/mismatch" target="_self">MISMATCH <span class="arrow-right-icon pull-right visible-xs visible-sm"></span></a></li>
-                                                                </ul>
-                                                                <ul class=" col-md-2 list-unstyled">
-                                                                    <li><a href="/shop/niloufer" target="_self">NILOUFER <span class="arrow-right-icon pull-right visible-xs visible-sm"></span></a></li>
-                                                                    <li><a href="/shop/uttara" target="_self">UTTARA <span class="arrow-right-icon pull-right visible-xs visible-sm"></span></a></li>
-                                                                    <li><a href="/shop/divyam" target="_self">DIVYAM <span class="arrow-right-icon pull-right visible-xs visible-sm"></span></a></li>
-                                                                    <li><a href="/shop/mehek" target="_self">MEHEK <span class="arrow-right-icon pull-right visible-xs visible-sm"></span></a></li>
-                                                                    <li><a href="/shop/zuhur" target="_self">ZUHUR <span class="arrow-right-icon pull-right visible-xs visible-sm"></span></a></li>
-                                                                    <li><a href="/shop/iva" target="_self">IVA <span class="arrow-right-icon pull-right visible-xs visible-sm"></span></a></li>
-                                                                    <li><a href="/shop/limited-edition" target="_self">LIMITED EDITION <span class="arrow-right-icon pull-right visible-xs visible-sm"></span></a></li>
-                                                                </ul>
-                                                                <ul class=" col-md-2 list-unstyled">
-
-                                                                </ul>
-                                                                <div class="col-md-3 hidden-xs hidden-sm pull-right subanav-prom">
-                                                                    <a href="/shop/subham" target="_self">
-                                                                        <img src='img/subnav.png' class="img-responsive" alt="">
-                                                                        <div>
-                                                                            <p>Earrings upto 40% off</p>
-                                                                            <h3>Shop now</h3>
-                                                                        </div>
-                                                                    </a>
                                                                 </div>
-                                                            </div>
-                                                        </div>
-                                                    </li>
+                                                                <div id="collection" class="sub-menu panel-collapse collapse">
+                                                                    <div>
+                                                                        <ul class="col-md-2 col-md-offset-2 list-unstyled">
+                                                                            <li><a href="/shop/swarnam" target="_self">SWARNAM <span class="arrow-right-icon pull-right visible-xs visible-sm"></span></a></li>
+                                                                            <li><a href="/shop/mirayah	" target="_self">MIRAYAH <span class="arrow-right-icon pull-right visible-xs visible-sm"></span></a></li>
+                                                                            <li><a href="/shop/fine-line" target="_self">FINE LINE <span class="arrow-right-icon pull-right visible-xs visible-sm"></span></a></li>
+                                                                            <li><a href="/shop/subham" target="_self">SUBHAM <span class="arrow-right-icon pull-right visible-xs visible-sm"></span></a></li>
+                                                                            <li><a href="/shop/queen-of-hearts" target="_self">QUEEN OF HEARTS <span class="arrow-right-icon pull-right visible-xs visible-sm"></span></a></li>
+                                                                            <li><a href="/shop/amara" target="_self">AMARA <span class="arrow-right-icon pull-right visible-xs visible-sm"></span></a></li>
+                                                                            <li><a href="/shop/mismatch" target="_self">MISMATCH <span class="arrow-right-icon pull-right visible-xs visible-sm"></span></a></li>
+                                                                        </ul>
+                                                                        <ul class=" col-md-2 list-unstyled">
+                                                                            <li><a href="/shop/niloufer" target="_self">NILOUFER <span class="arrow-right-icon pull-right visible-xs visible-sm"></span></a></li>
+                                                                            <li><a href="/shop/uttara" target="_self">UTTARA <span class="arrow-right-icon pull-right visible-xs visible-sm"></span></a></li>
+                                                                            <li><a href="/shop/divyam" target="_self">DIVYAM <span class="arrow-right-icon pull-right visible-xs visible-sm"></span></a></li>
+                                                                            <li><a href="/shop/mehek" target="_self">MEHEK <span class="arrow-right-icon pull-right visible-xs visible-sm"></span></a></li>
+                                                                            <li><a href="/shop/zuhur" target="_self">ZUHUR <span class="arrow-right-icon pull-right visible-xs visible-sm"></span></a></li>
+                                                                            <li><a href="/shop/iva" target="_self">IVA <span class="arrow-right-icon pull-right visible-xs visible-sm"></span></a></li>
+                                                                            <li><a href="/shop/limited-edition" target="_self">LIMITED EDITION <span class="arrow-right-icon pull-right visible-xs visible-sm"></span></a></li>
+                                                                        </ul>
+                                                                        <ul class=" col-md-2 list-unstyled">
 
-
-
-                                                    <li class="panel">
-                                                        <div class="panel-heading">
-                                                            <a href="/rivaah" class="sublevel">RIVAAH</a>
-                                                        </div>
-                                                    </li>
-                                                    <li class="panel">
-                                                        <div class="panel-heading">
-                                                            <a href="/aveer" class="sublevel">AVEER</a>
-                                                        </div>
-                                                    </li>
-                                                    <li class="panel">
-                                                        <div class="panel-heading">
-                                                            <a href="/inside-tanishq" class="hidden-xs hidden-sm sublevel">INSIDE TANISHQ</a>
-                                                            <a data-toggle="collapse" data-parent="#accordion-main,#accordion-main1,#accordion" href="#inside" class="visible-xs visible-sm">INSIDE TANISHQ <span class="plus-icon pull-right visible-xs visible-sm"></span></a>
-
-                                                        </div>
-                                                        <div id="inside" class="sub-menu panel-collapse collapse">
-                                                            <div>
-                                                                <ul class="col-md-2 col-md-offset-2 list-unstyled">
-                                                                    <li><a href="/inside-tanishq/brand-story" target="_self">BRAND STORY <span class="arrow-right-icon pull-right visible-xs visible-sm"></span></a></li>
-                                                                    <li><a href="/inside-tanishq/product-philosophy" target="_self">PRODUCT PHILOSOPHY <span class="arrow-right-icon pull-right visible-xs visible-sm"></span></a></li>
-                                                                    <li><a href="/inside-tanishq/design-philosophy" target="_self">DESIGN PHILOSOPHY <span class="arrow-right-icon pull-right visible-xs visible-sm"></span></a></li>
-                                                                    <li><a href="/inside-tanishq/karigar-story" target="_self">KARIGAR STORY <span class="arrow-right-icon pull-right visible-xs visible-sm"></span></a></li>
-
-                                                                </ul>
-
-                                                                <div class="col-md-3 hidden-xs hidden-sm pull-right subanav-prom">
-                                                                    <a href="/shop/subham" target="_self">
-                                                                        <img src='img/subnav.png' class="img-responsive" alt="">
-                                                                        <div>
-                                                                            <p>Earrings upto 40% off</p>
-                                                                            <h3>Shop now</h3>
+                                                                        </ul>
+                                                                        <div class="col-md-3 hidden-xs hidden-sm pull-right subanav-prom">
+                                                                            <a href="/shop/subham" target="_self">
+                                                                                <img src='img/subnav.png' class="img-responsive" alt="">
+                                                                                <div>
+                                                                                    <p>Earrings upto 40% off</p>
+                                                                                    <h3>Shop now</h3>
+                                                                                </div>
+                                                                            </a>
                                                                         </div>
-                                                                    </a>
+                                                                    </div>
                                                                 </div>
-                                                            </div>
-                                                        </div>
-                                                    </li>
-                                                    <li class="panel">
-                                                        <div class="panel-heading">
-                                                            <a href="/shop/gifting?type=gifting" class="sublevel">Gifting</a>
-                                                        </div>
-                                                    </li>
+                                                            </li>
 
-                                                    <li class="panel">
-                                                        <div class="panel-heading">
-                                                            <a href="/shop/gifting?type=goffers" class="sublevel">Offers</a>
-                                                        </div>
-                                                    </li>
-                                                    <!--<li class="panel">
+
+
+                                                            <li class="panel">
+                                                                <div class="panel-heading">
+                                                                    <a href="/rivaah" class="sublevel">RIVAAH</a>
+                                                                </div>
+                                                            </li>
+                                                            <li class="panel">
+                                                                <div class="panel-heading">
+                                                                    <a href="/aveer" class="sublevel">AVEER</a>
+                                                                </div>
+                                                            </li>
+                                                            <li class="panel">
+                                                                <div class="panel-heading">
+                                                                    <a href="/inside-tanishq" class="hidden-xs hidden-sm sublevel">INSIDE TANISHQ</a>
+                                                                    <a data-toggle="collapse" data-parent="#accordion-main,#accordion-main1,#accordion" href="#inside" class="visible-xs visible-sm">INSIDE TANISHQ <span class="plus-icon pull-right visible-xs visible-sm"></span></a>
+
+                                                                </div>
+                                                                <div id="inside" class="sub-menu panel-collapse collapse">
+                                                                    <div>
+                                                                        <ul class="col-md-2 col-md-offset-2 list-unstyled">
+                                                                            <li><a href="/inside-tanishq/brand-story" target="_self">BRAND STORY <span class="arrow-right-icon pull-right visible-xs visible-sm"></span></a></li>
+                                                                            <li><a href="/inside-tanishq/product-philosophy" target="_self">PRODUCT PHILOSOPHY <span class="arrow-right-icon pull-right visible-xs visible-sm"></span></a></li>
+                                                                            <li><a href="/inside-tanishq/design-philosophy" target="_self">DESIGN PHILOSOPHY <span class="arrow-right-icon pull-right visible-xs visible-sm"></span></a></li>
+                                                                            <li><a href="/inside-tanishq/karigar-story" target="_self">KARIGAR STORY <span class="arrow-right-icon pull-right visible-xs visible-sm"></span></a></li>
+
+                                                                        </ul>
+
+                                                                        <div class="col-md-3 hidden-xs hidden-sm pull-right subanav-prom">
+                                                                            <a href="/shop/subham" target="_self">
+                                                                                <img src='img/subnav.png' class="img-responsive" alt="">
+                                                                                <div>
+                                                                                    <p>Earrings upto 40% off</p>
+                                                                                    <h3>Shop now</h3>
+                                                                                </div>
+                                                                            </a>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </li>
+                                                            <li class="panel">
+                                                                <div class="panel-heading">
+                                                                    <a href="/shop/gifting?type=gifting" class="sublevel">Gifting</a>
+                                                                </div>
+                                                            </li>
+
+                                                            <li class="panel">
+                                                                <div class="panel-heading">
+                                                                    <a href="/shop/gifting?type=goffers" class="sublevel">Offers</a>
+                                                                </div>
+                                                            </li>
+                                                            <!--<li class="panel">
 														<div class="panel-heading">
 															<a class="hidden-xs hidden-sm sublevel">STORIES</a>
 															<a data-toggle="collapse" data-parent="#accordion-main,#accordion-main1,#accordion" href="#stories" class="visible-xs visible-sm">STORIES <span class="plus-icon pull-right visible-xs visible-sm"></span></a>
@@ -1538,7 +1538,7 @@
 																
 																<div class="col-md-3 hidden-xs hidden-sm pull-right subanav-prom">
 																	<a href="/shop/subham" target="_self">
-																		<img defer-image-load image-src='[Component name="tanishq_design_lib/img/header/stories_img" rendition="auto" format="url"] ' class="img-responsive" alt="">
+																		<img defer-image-load image-src='[Component name="tanishq_design_lib/images/header/stories_img" rendition="auto" format="url"] ' class="img-responsive" alt="">
 																		<div>
 																			<p>Earrings upto 40% off</p>
 																			<h3>Shop now</h3>
@@ -1549,7 +1549,7 @@
 														</div>
 													</li-->
 
-                                                    <!--li class="panel">
+                                                            <!--li class="panel">
 														<div class="panel-heading">
 															<a  href="/shop/search-results/availability=include-out-of-stock&mother-brand=mia?q=mia" class="sublevel">MIA</a>
 														</div>
@@ -1557,59 +1557,59 @@
 </li>
 	<li class="visible-sm visible-xs panel"><div class="panel-heading"><a href="javascript:void(0)" ng-click="navigateToStore()">find a store<span class="store-accord-icon pull-right"></span></a></div></li>
 											<li class="visible-sm visible-xs panel"><div class="panel-heading"><a href="javascript:;" id="wishlist-header" ng-class="{'disableLogin' : wishListPathDisable}" ng-click="wishlist()" target="_self">wishlist<span class="wishlist-accord-icon pull-right"></span></a></div></li-->
-                                                    <!-- <li class="pull-right locator search hidden-xs hiddem-sm">
-												<img src='[Component name="tanishq_design_lib/img/icon/store-locator" rendition="auto" format="url"] ' class="img-responsive hidden-xs hidden-sm" alt="">
+                                                            <!-- <li class="pull-right locator search hidden-xs hiddem-sm">
+												<img src='[Component name="tanishq_design_lib/images/icon/store-locator" rendition="auto" format="url"] ' class="img-responsive hidden-xs hidden-sm" alt="">
 												<!--    <a href="#" class="visible-sm visible-xs">FIND STORE</a>-->
-                                                    <!-- </li> -->
-                                                    <!--changes for currency in mobile -->
-                                                    <!--<ul id="switcher" class="visible-xs visible-sm nav navbar-nav col-xs-12 no-padding "> -->
-                                                    <li class="visible-sm visible-xs panel currency-switcher">
-                                                        <div class="panel-heading">
+                                                            <!-- </li> -->
+                                                            <!--changes for currency in mobile -->
+                                                            <!--<ul id="switcher" class="visible-xs visible-sm nav navbar-nav col-xs-12 no-padding "> -->
+                                                            <li class="visible-sm visible-xs panel currency-switcher">
+                                                                <div class="panel-heading">
 
-                                                            <a id="currencySelectorButton" data-toggle="collapse" data-parent="#accordion-main,#accordion-main1,#switcher,#accordion" data-target="#currencyheader" ng-click="currencyScroll()">currency<span class="plus-icon pull-right visible-xs visible-sm"></span></a></div>
+                                                                    <a id="currencySelectorButton" data-toggle="collapse" data-parent="#accordion-main,#accordion-main1,#switcher,#accordion" data-target="#currencyheader" ng-click="currencyScroll()">currency<span class="plus-icon pull-right visible-xs visible-sm"></span></a></div>
 
-                                                        <div id="currencyheader" class="sub-menu panel-collapse collapse">
-                                                            <div class="container">
-                                                                <ul class="row col-xs-12 col-md-10 col-md-offset-2 currency currency-logos no-padding" ng-if="windowsizeval" ng-controller="currencySwitch">
-                                                                    <li class="col-xs-6 col-sm-2 no-padding" ng-repeat="crncy in currencySelectorData" ng-class="{'currencyEnable':crncy.additionalValue[0].value === cookieCurrencyvalue, 'currencyEnableFirst': $first && cookieCurrencyvalue === undefined}" ng-click="(crncy.additionalValue[0].value != cookieCurrencyvalue) && getCurrencyValue(crncy.additionalValue[0].value,crncy.decimalPlaces)">
-                                                                        <button>{{crncy.additionalValue[0].value}}<span ng-if="!(crncy.additionalValue[0].value == 'INR')">{{crncy.currencySymbol}}</span>
+                                                                <div id="currencyheader" class="sub-menu panel-collapse collapse">
+                                                                    <div class="container">
+                                                                        <ul class="row col-xs-12 col-md-10 col-md-offset-2 currency currency-logos no-padding" ng-if="windowsizeval" ng-controller="currencySwitch">
+                                                                            <li class="col-xs-6 col-sm-2 no-padding" ng-repeat="crncy in currencySelectorData" ng-class="{'currencyEnable':crncy.additionalValue[0].value === cookieCurrencyvalue, 'currencyEnableFirst': $first && cookieCurrencyvalue === undefined}" ng-click="(crncy.additionalValue[0].value != cookieCurrencyvalue) && getCurrencyValue(crncy.additionalValue[0].value,crncy.decimalPlaces)">
+                                                                                <button>{{crncy.additionalValue[0].value}}<span ng-if="!(crncy.additionalValue[0].value == 'INR')">{{crncy.currencySymbol}}</span>
 																					<span ng-if="crncy.additionalValue[0].value == 'INR'"><i class="fa fa-inr"></i></span></button>
-                                                                    </li>
+                                                                            </li>
 
-                                                                </ul>
-                                                            </div>
-                                                        </div>
+                                                                        </ul>
+                                                                    </div>
+                                                                </div>
+                                                            </li>
+                                                        </ul>
+
                                                     </li>
                                                 </ul>
-
-                                            </li>
-                                        </ul>
+                                            </div>
+                                        </div>
                                     </div>
+                                </div>
+                            </div>
+                            <div class="col-md-1 hidden-sm hidden-xs search-icon-div">
+                                <div class="col-md-6 col-xs-12 search locator-icon">
+                                    <a href="javascript:void(0)" ng-click="navigateToStore()">
+                                        <img src='img/icon/store-locataor.svg' class="img-responsive hidden-xs hidden-sm" alt="">
+                                    </a>
+                                </div>
+                                <div class="col-md-6 col-xs-12 search search-icon">
+                                    <!-- <a href="javascript:void(0)" data-toggle="collapse" data-target="#searchBox" class="closeSearch" ng-click="searchtoggle=!searchtoggle;openSearchBox()">
+									<span  ng-if="!searchtoggle"><img src='[Component name="tanishq_design_lib/images/icon/search" rendition="auto" format="url"] ' class="img-responsive" alt="" ></span>
+									<span ng-if="searchtoggle"><img src='[Component name="tanishq_design_lib/images/icon/close" rendition="auto" format="url"]' class="img-responsive serch-close" alt=""></span>
+								</a> -->
+                                    <a id="tanishqSearch" data-toggle="collapse" data-target="#searchBox" class="closeSearch collapsed" ng-click="openSearchBox()"></a>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-1 hidden-sm hidden-xs search-icon-div">
-                        <div class="col-md-6 col-xs-12 search locator-icon">
-                            <a href="javascript:void(0)" ng-click="navigateToStore()">
-                                <img src='img/icon/store-locataor.svg' class="img-responsive hidden-xs hidden-sm" alt="">
-                            </a>
-                        </div>
-                        <div class="col-md-6 col-xs-12 search search-icon">
-                            <!-- <a href="javascript:void(0)" data-toggle="collapse" data-target="#searchBox" class="closeSearch" ng-click="searchtoggle=!searchtoggle;openSearchBox()">
-									<span  ng-if="!searchtoggle"><img src='[Component name="tanishq_design_lib/img/icon/search" rendition="auto" format="url"] ' class="img-responsive" alt="" ></span>
-									<span ng-if="searchtoggle"><img src='[Component name="tanishq_design_lib/img/icon/close" rendition="auto" format="url"]' class="img-responsive serch-close" alt=""></span>
-								</a> -->
-                            <a id="tanishqSearch" data-toggle="collapse" data-target="#searchBox" class="closeSearch collapsed" ng-click="openSearchBox()"></a>
-                        </div>
-                    </div>
                 </div>
-            </div>
-        </div>
-    </nav>
-    </header>
+            </nav>
+        </header>
     </div>
-
+    
     <div class="search-box-wrapper">
         <div class="container">
             <div class="row">
@@ -1710,7 +1710,7 @@
                                         <!--
 									<h3>Jewellery <span></span> Necklace</h3>
 									<p>Tanishq Fine Line 18KT Yellow Gold and Diamond Necklace</p>
--->
+									 -->
                                         <a href="{{option.frontUrl}}" data-index="{{key}}" role="menuitem" target="_self">
                                             <!--										<h3 class="search-path" data-index="{{key}}" role="menuitem">{{option.path}} </h3>-->
                                             <h3 class="search-path" data-index="{{key}}" role="menuitem">Tanishq Fine Line 18KT Yellow Gold and Diamond Necklace</h3>
@@ -1763,19 +1763,18 @@
                 </div>
             </div>
         </div>
-    </div> 
-
+    </div>
 
 
     <!--------------------------------------------------- BODY CONTENT --------------------------------------------->
     
-    <section class="hero-section" style="font-family:sans-serif; position:relative;">
+        <section class="hero-section" style="font-family:sans-serif; position:relative;">
         <span class="pend">
-    <img src="./img/ll1.png" id="abc" style=" top:0;left:3vw;width:7%;max-width:80px; height:auto;" class="invi pendulum " alt="">
-    <img src="./img/ll2.png" style="top:0;left:13vw;max-width:65px;width:6%;height:auto;" class="invi pendulumReverse" alt="">
-    <img src="./img/ll2.png" style="top:0;right:13vw;max-width:65px;width:6%;height:auto;" class=" invi pendulum " alt="">
-    <img src="./img/ll1.png" style="top:0;right:3vw;max-width:80px;width:7%;height:auto;" class="invi pendulumReverse " alt="">
-  </span>
+        <img src="./img/ll1.png" id="abc" style=" top:0;left:3vw;width:7%;max-width:80px; height:auto;" class="invi pendulum " alt="">
+        <img src="./img/ll2.png" style="top:0;left:13vw;max-width:65px;width:6%;height:auto;" class="invi pendulumReverse" alt="">
+        <img src="./img/ll2.png" style="top:0;right:13vw;max-width:65px;width:6%;height:auto;" class=" invi pendulum " alt="">
+        <img src="./img/ll1.png" style="top:0;right:3vw;max-width:80px;width:7%;height:auto;" class="invi pendulumReverse " alt="">
+        </span>
 
 
         <div class="container" style="padding-top:80px;">
@@ -1894,9 +1893,6 @@
 
 
 
-</body>
-
-</html>
 
 
 
